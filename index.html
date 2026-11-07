@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>TV do Vale do Piranga</title>
+<meta name="description" content="Notícias, esporte regional, cultura, lazer e tecnologia do Vale do Piranga." />
+<meta property="og:title" content="TV do Vale do Piranga" />
+<meta property="og:type" content="website" />
+
+<!-- ============================================================
+     INJEÇÃO DE CREDENCIAIS
+     Troque os valores abaixo. A chave anon é pública por projeto
+     (o RLS protege os dados). NUNCA coloque a service_role aqui.
+     ============================================================ -->
+<script>
+window.TVP_CONFIG = {
+  SUPABASE_URL:      "__SUPABASE_URL__",
+  SUPABASE_ANON_KEY: "__SUPABASE_ANON_KEY__",
+  FOUNDATION_YEAR:   "__FOUNDATION_YEAR__",
+  CONTACT_EMAIL:     "__CONTACT_EMAIL__",
+  WHATSAPP:          "__WHATSAPP__"
+};
+</script>
+
+<style>
+@font-face{font-family:"Balverde";src:url("/fonts/Balverde-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+@font-face{font-family:"Balverde";src:url("/fonts/Balverde-SemiBold.woff2") format("woff2");font-weight:600;font-display:swap}
+@font-face{font-family:"Balverde";src:url("/fonts/Balverde-ExtraBold.woff2") format("woff2");font-weight:800;font-display:swap}
+@font-face{font-family:"Mantra";src:url("/fonts/Mantra-Regular.woff2") format("woff2");font-weight:400;font-display:swap}
+
+:root{
+  --brand:#10B981; --brand-4:#35CE8A; --brand-d:#0B7C56;
+  --ink:#0D0D11; --ink2:#121214; --ink3:#17171B; --ink4:#202027;
+  --line:#232329; --line2:#2A2A33;
+  --soft:#A9A9B4; --soft2:#8A8A97; --txt:#F4F4F7;
+  --head:"Balverde",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --body:"Mantra","Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink);color:var(--txt);font-family:var(--body);-webkit-font-smoothing:antialiased;
+  background-image:radial-gradient(rgba(255,255,255,.035) 1px,transparent 1px);background-size:22px 22px}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+input,textarea,select{font:inherit}
+h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:800}
+.wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+.hidden{display:none !important}
+.muted{color:var(--soft)}
+::selection{background:rgba(16,185,129,.35);color:#fff}
+:focus-visible{outline:2px solid var(--brand-4);outline-offset:3px;border-radius:6px}
+::-webkit-scrollbar{width:10px}
+::-webkit-scrollbar-track{background:#0A0A0D}
+::-webkit-scrollbar-thumb{background:var(--line2);border-radius:99px;border:2px solid #0A0A0D}
+
+/* header */
+.topbar{position:sticky;top:0;z-index:60;backdrop-filter:blur(14px);background:rgba(13,13,17,.55);border-bottom:1px solid transparent;transition:.3s}
+.topbar.scrolled{background:rgba(10,10,13,.9);border-bottom-color:rgba(16,185,129,.25)}
+.nav{height:72px;display:flex;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:10px}
+.logo{height:42px;width:auto;transition:transform .3s}
+.brand:hover .logo{transform:scale(1.03)}
+.yr{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft2);display:none}
+@media(min-width:1000px){.yr{display:block}}
+.links{display:none;gap:2px;margin-left:auto}
+@media(min-width:1000px){.links{display:flex}}
+.links a{padding:8px 12px;border-radius:10px;font-size:14px;color:#C9C9D2}
+.links a:hover{color:#fff;background:rgba(255,255,255,.04)}
+.actions{display:flex;align-items:center;gap:8px;margin-left:auto}
+@media(min-width:1000px){.actions{margin-left:0}}
+.icon-btn{width:40px;height:40px;border-radius:12px;border:1px solid var(--line2);background:var(--ink2);display:grid;place-items:center;font-size:15px;color:var(--soft);transition:.2s}
+.icon-btn:hover{border-color:rgba(16,185,129,.6);color:var(--brand-4)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:12px;padding:11px 18px;font-size:14px;font-weight:600;transition:.2s}
+.btn-primary{background:var(--brand);color:#0A0A0D}
+.btn-primary:hover{background:var(--brand-4);box-shadow:0 0 0 1px rgba(16,185,129,.3),0 22px 60px -24px rgba(16,185,129,.55)}
+.btn-ghost{border:1px solid var(--line2);color:var(--soft)}
+.btn-ghost:hover{border-color:rgba(16,185,129,.6);color:#fff}
+.btn-admin{border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.1);color:var(--brand-4);padding:9px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.avatar{width:40px;height:40px;border-radius:99px;object-fit:cover;border:1px solid var(--line2)}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:99px;border:1px solid rgba(16,185,129,.4);
+  background:rgba(16,185,129,.14);padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#A2EBC9}
+.chip-live{border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.12);color:#F87171;border-radius:99px;
+  padding:5px 12px;font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;display:inline-flex;align-items:center;gap:6px}
+.dot{width:6px;height:6px;border-radius:99px;background:#EF4444;animation:pulseLive 1.6s ease-in-out infinite}
+@keyframes pulseLive{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.8)}}
+@keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* alerta */
+.alertbar{background:linear-gradient(90deg,rgba(16,185,129,.16),rgba(18,18,20,.92));
+  border-bottom:1px solid rgba(16,185,129,.35)}
+.alertbar .wrap{padding:10px 18px;font-size:13px;color:#A2EBC9;display:flex;align-items:center;gap:10px}
+.alertbar .x{margin-left:auto;color:var(--soft2);font-size:15px;padding:0 4px}
+.alertbar .x:hover{color:#fff}
+
+/* hero */
+.hero{padding:22px 0 6px}
+.hero-stage{position:relative;aspect-ratio:16/9;border-radius:26px;overflow:hidden;border:1px solid var(--line);background:var(--ink2)}
+@media(min-width:820px){.hero-stage{aspect-ratio:21/9}}
+.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:kenburns 9s ease-out forwards}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(to top,#0A0A0D 8%,rgba(10,10,13,.72) 45%,rgba(10,10,13,.1))}
+.hero-body{position:absolute;inset:auto 0 0 0;padding:22px;animation:up .6s cubic-bezier(.2,.8,.2,1) both}
+@media(min-width:820px){.hero-body{padding:44px;max-width:820px}}
+.hero-body h1{font-size:clamp(24px,4.4vw,52px);line-height:1.06;margin-top:14px;color:#fff}
+.hero-body p{margin:12px 0 0;color:#C9C9D2;font-size:15px;max-width:60ch}
+.hero-body .btn{margin-top:22px}
+.hero-nav{position:absolute;top:14px;right:14px;display:flex;gap:8px}
+.hero-nav button{width:38px;height:38px;border-radius:99px;border:1px solid rgba(255,255,255,.18);
+  background:rgba(10,10,13,.6);color:#fff;backdrop-filter:blur(6px);font-size:17px;line-height:1}
+.hero-nav button:hover{border-color:var(--brand-4);color:var(--brand-4)}
+.hero-dots{display:flex;gap:8px;margin-top:14px}
+.hero-dots button{height:6px;flex:1;border-radius:99px;background:var(--line2);overflow:hidden}
+.hero-dots button i{display:block;height:100%;width:0;background:var(--brand-4);border-radius:99px;transition:width .5s}
+.hero-dots button.on i{width:100%}
+.hero-empty{padding:60px 24px;text-align:center;color:var(--soft2)}
+
+/* sections */
+.section{padding:44px 0}
+.sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px;margin-bottom:20px}
+.sec-head .kick{font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brand-4)}
+.sec-head h2{font-size:clamp(22px,2.6vw,32px);color:#fff;margin-top:6px}
+
+/* placar */
+.live-card{border:1px solid var(--line);border-radius:26px;overflow:hidden;
+  background:linear-gradient(to bottom,var(--ink2),var(--ink));box-shadow:0 20px 45px -30px rgba(0,0,0,.9)}
+.live-top{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 18px;
+  border-bottom:1px solid rgba(35,35,41,.8);background:rgba(13,13,17,.6);font-size:11px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--soft2)}
+.clock{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:14px;letter-spacing:0;text-transform:none;color:#C9C9D2}
+.clock.on{color:var(--brand-4)}
+.score-row{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:center;padding:26px 16px}
+.team{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center}
+.crest{width:58px;height:58px;border-radius:16px;border:1px solid var(--line2);background:var(--ink4);display:grid;place-items:center;font-family:var(--head);font-size:17px;color:#C9C9D2;overflow:hidden}
+@media(min-width:700px){.crest{width:78px;height:78px;font-size:21px}}
+.team b{font-weight:600;font-size:13px;color:#fff}
+@media(min-width:700px){.team b{font-size:15px}}
+.score{display:flex;align-items:center;gap:12px;font-family:var(--head);font-size:36px;color:#fff}
+@media(min-width:700px){.score{font-size:58px;gap:18px}}
+.score span.x{font-size:18px;color:var(--soft2)}
+@media(min-width:700px){.score span.x{font-size:28px}}
+.historic{margin:0 16px 14px;border:1px solid rgba(16,185,129,.4);background:rgba(16,185,129,.1);
+  border-radius:16px;padding:12px 16px;font-size:13px;color:#A2EBC9}
+.tabs{display:flex;gap:4px;padding:10px 12px 0;border-top:1px solid rgba(35,35,41,.7);flex-wrap:wrap}
+.tab{padding:8px 14px;border-radius:10px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft2)}
+.tab.on{color:var(--brand-4);box-shadow:inset 0 -2px 0 var(--brand-4)}
+.pane{padding:14px;max-height:400px;overflow:auto}
+.ev{display:flex;align-items:center;gap:10px;padding:8px 12px;border-radius:12px;
+  border:1px solid rgba(35,35,41,.7);background:rgba(18,18,20,.6);font-size:13px;margin-bottom:8px}
+.ev .min{width:34px;font-family:ui-monospace,monospace;font-size:11px;color:var(--soft2)}
+.ev .who{flex:1;color:#E6E6EB}
+.ev .who b{color:#fff;font-weight:600}
+.ev .num{border-radius:6px;background:var(--line2);padding:1px 6px;font-size:10px;color:var(--soft)}
+.scorer{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:12px;
+  border:1px solid rgba(35,35,41,.7);background:rgba(18,18,20,.6);font-size:13px;margin-bottom:8px}
+.scorer.hot{border-color:rgba(16,185,129,.5);background:rgba(16,185,129,.1)}
+.scorer .g{margin-left:auto;border-radius:8px;background:var(--ink4);padding:2px 9px;font-family:var(--head);color:#A2EBC9}
+.lineup h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-4);margin-bottom:8px}
+.lineup li{display:flex;gap:8px;font-size:13px;color:#C9C9D2;padding:3px 0;list-style:none}
+.lineup ul{margin:0;padding:0}
+.lineup .sh{width:22px;text-align:right;font-family:ui-monospace,monospace;font-size:11px;color:var(--soft2)}
+.lineup .pos{margin-left:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft2)}
+.empty{border:1px dashed var(--line2);border-radius:14px;padding:24px;text-align:center;font-size:13px;color:var(--soft2)}
+
+/* jogos */
+.match-list{display:grid;gap:8px;grid-template-columns:1fr}
+@media(min-width:760px){.match-list{grid-template-columns:1fr 1fr}}
+.match-row{display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:16px;
+  border:1px solid rgba(35,35,41,.8);background:var(--ink2);text-align:left;transition:.2s;width:100%}
+.match-row:hover{border-color:rgba(16,185,129,.55);transform:translateY(-1px)}
+.match-row .d{width:52px;font-family:ui-monospace,monospace;font-size:11px;color:var(--soft2)}
+.match-row .t{flex:1;font-size:14px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.match-row .st{font-size:10px;letter-spacing:.1em;text-transform:uppercase;padding:3px 8px;border-radius:6px;background:var(--ink4);color:#C9C9D2}
+.match-row .st.live{background:rgba(239,68,68,.15);color:#F87171}
+
+/* notícias */
+.grid-news{display:grid;gap:16px;grid-template-columns:1fr}
+@media(min-width:640px){.grid-news{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.grid-news{grid-template-columns:repeat(3,1fr)}}
+.card-post{border:1px solid var(--line);border-radius:20px;overflow:hidden;background:var(--ink2);
+  text-align:left;transition:.25s;display:flex;flex-direction:column;width:100%}
+.card-post:hover{transform:translateY(-3px);border-color:rgba(16,185,129,.45)}
+.card-post .thumb{aspect-ratio:16/10;background:linear-gradient(135deg,#1B1B20,#101014);position:relative;display:block}
+.card-post .thumb img{width:100%;height:100%;object-fit:cover}
+.card-post .thumb .cat{position:absolute;top:10px;left:10px;font-size:10px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;background:rgba(10,10,13,.75);border:1px solid rgba(16,185,129,.4);
+  color:#A2EBC9;padding:4px 9px;border-radius:99px;backdrop-filter:blur(4px)}
+.card-post .body{padding:16px;display:block}
+.card-post h3{font-size:16px;color:#fff;line-height:1.3}
+.card-post p{margin:8px 0 0;font-size:13px;color:var(--soft);line-height:1.5}
+.card-post .meta{margin-top:12px;font-size:11px;color:var(--soft2);display:block}
+
+/* footer */
+.foot{margin-top:52px;border-top:1px solid var(--line);background:#0A0A0D;padding:40px 0 26px}
+.cta{border:1px solid rgba(16,185,129,.3);border-radius:24px;padding:24px;
+  background:linear-gradient(90deg,rgba(16,185,129,.15),var(--ink2) 55%,var(--ink))}
+.cta h3{font-size:clamp(17px,2.2vw,25px);color:#fff;line-height:1.25}
+.cta p{margin:8px 0 0;font-size:13px;color:var(--soft);max-width:62ch}
+.cta .btn{margin-top:16px}
+.foot-cols{display:grid;gap:28px;margin-top:34px}
+@media(min-width:700px){.foot-cols{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.foot-cols{grid-template-columns:repeat(4,1fr)}}
+.foot-cols h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-4);margin-bottom:10px;font-weight:700}
+.foot-cols ul{list-style:none;margin:0;padding:0;display:grid;gap:6px;font-size:13px;color:var(--soft)}
+.foot-cols a:hover{color:#fff}
+.foot-bottom{margin-top:32px;padding-top:20px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;font-size:12px;color:var(--soft2)}
+
+/* modais */
+.modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;padding:18px;
+  background:rgba(5,5,7,.78);backdrop-filter:blur(6px)}
+.modal.on{display:flex}
+.modal-card{width:100%;max-width:520px;max-height:88vh;overflow:auto;border:1px solid var(--line);
+  border-radius:22px;background:var(--ink2);padding:24px;animation:up .3s ease both;position:relative}
+.modal-card.wide{max-width:760px}
+.modal-card h3{font-size:20px;color:#fff}
+.modal-card .sub{margin:6px 0 18px;font-size:13px;color:var(--soft)}
+.close{position:absolute;top:14px;right:14px}
+.modal-close{width:34px;height:34px;border-radius:99px;border:1px solid var(--line2);background:var(--ink3);display:grid;place-items:center;color:var(--soft)}
+.modal-close:hover{color:#fff;border-color:var(--brand-4)}
+.field{margin-bottom:12px}
+.field label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft2);margin-bottom:6px}
+.input{width:100%;border-radius:12px;border:1px solid var(--line2);background:var(--ink);padding:11px 13px;
+  font-size:14px;color:#fff}
+.input:focus{border-color:var(--brand);outline:none}
+.row-btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:6px}
+.notice{border:1px solid rgba(16,185,129,.3);background:rgba(16,185,129,.08);border-radius:14px;padding:16px;text-align:center;font-size:13px;color:#C9C9D2}
+.notice.warn{border-color:rgba(245,158,11,.4);background:rgba(245,158,11,.1);color:#FCD34D}
+.reader-body{margin:16px 0;font-size:15px;line-height:1.7;color:#DDDDE4}
+.reader-body p{margin:0 0 14px}
+.cmt{display:flex;gap:10px;padding:12px;border-radius:14px;border:1px solid rgba(35,35,41,.8);
+  background:rgba(18,18,20,.55);margin-bottom:8px}
+.cmt img{width:34px;height:34px;border-radius:99px;object-fit:cover;flex:none}
+.cmt .nm{font-size:13px;font-weight:600;color:#fff}
+.cmt .dt{font-size:11px;color:var(--soft2);margin-left:6px;font-weight:400}
+.cmt .bd{font-size:13px;color:#C9C9D2;margin-top:3px;white-space:pre-wrap;word-break:break-word}
+
+/* drawer admin */
+.drawer{position:fixed;inset:0 0 0 auto;width:100%;max-width:560px;z-index:95;background:var(--ink);
+  border-left:1px solid var(--line);transform:translateX(100%);transition:transform .3s ease;display:flex;flex-direction:column}
+.drawer.on{transform:translateX(0)}
+.drawer-head{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between}
+.drawer-head h3{font-size:17px;color:#fff}
+.adm-tabs{display:flex;gap:4px;padding:10px 14px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.adm-tab{padding:8px 11px;border-radius:9px;font-size:10px;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--soft2);white-space:nowrap}
+.adm-tab.on{color:var(--brand-4);box-shadow:inset 0 -2px 0 var(--brand-4)}
+.drawer-body{padding:14px;overflow:auto;flex:1}
+.panel{border:1px solid var(--line);border-radius:18px;padding:14px;margin-bottom:14px;background:var(--ink2)}
+.panel h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-4);margin-bottom:10px}
+.ev-btn{border:1px solid var(--line2);background:var(--ink3);border-radius:10px;padding:8px 10px;
+  font-size:12px;font-weight:600;color:#E6E6EB;transition:.15s}
+.ev-btn:hover{border-color:var(--brand);color:#A2EBC9}
+.ev-btn:active{transform:scale(.95)}
+.admin-line{display:flex;align-items:center;gap:8px;padding:8px;border-radius:10px;background:rgba(13,13,17,.7);
+  font-size:12px;margin-bottom:6px}
+.admin-line .grow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#C9C9D2}
+.mini{font-size:11px;padding:5px 9px;border-radius:8px;border:1px solid var(--line2);color:var(--soft)}
+.mini:hover{border-color:var(--brand-4);color:#fff}
+.mini.danger{border-color:rgba(239,68,68,.4);color:#F87171}
+.mini.danger:hover{background:rgba(239,68,68,.12)}
+.mini.on{border-color:rgba(16,185,129,.6);color:#A2EBC9;background:rgba(16,185,129,.1)}
+.thumb-sm{width:26px;height:26px;border-radius:6px;object-fit:contain;background:var(--ink4);flex:none}
+.hint{font-size:11px;color:var(--soft2);line-height:1.5;margin-top:8px}
+
+.toast{position:fixed;bottom:22px;left:50%;transform:translate(-50%,26px);z-index:120;opacity:0;
+  background:var(--ink4);border:1px solid var(--brand-d);color:#fff;padding:12px 18px;border-radius:12px;
+  font-size:13px;transition:.3s;pointer-events:none;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms !important;transition-duration:.001ms !important}
+}
+</style>
+</head>
+<body id="top">
+
+<!-- ================= HEADER ================= -->
+<header class="topbar" id="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="TV do Vale do Piranga">
+      <svg class="logo" viewBox="0 0 560 150" role="img" aria-label="TV do Vale do Piranga">
+        <defs>
+          <linearGradient id="prata" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#FFFFFF"/><stop offset="42%" stop-color="#DDE2E8"/>
+            <stop offset="58%" stop-color="#98A1AD"/><stop offset="100%" stop-color="#EDF1F5"/>
+          </linearGradient>
+          <linearGradient id="verde" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#3ADFA0"/><stop offset="100%" stop-color="#0E9E6D"/>
+          </linearGradient>
+        </defs>
+        <path d="M18 40 Q18 22 34 30 L120 70 Q136 78 120 86 L34 126 Q18 134 18 116 Z" fill="url(#verde)"/>
+        <text x="52" y="92" font-family="Balverde,sans-serif" font-size="34" font-weight="800"
+              fill="url(#prata)" letter-spacing="1">TV</text>
+        <text x="152" y="76" font-family="Balverde,sans-serif" font-size="54" font-weight="800"
+              fill="url(#prata)" letter-spacing="1">VALE DO</text>
+        <text x="155" y="112" font-family="Balverde,sans-serif" font-size="26" font-weight="600"
+              fill="url(#verde)" letter-spacing="9">PIRANGA</text>
+        <path d="M150 52 q22 -9 44 2" stroke="url(#verde)" stroke-width="5" fill="none" stroke-linecap="round"/>
+      </svg>
+      <span class="yr">desde <span id="yrHead">2021</span></span>
+    </a>
+
+    <nav class="links">
+      <a href="#noticias">Notícias</a>
+      <a href="#esporte">Esporte Regional</a>
+      <a href="#cultura">Cultura</a>
+      <a href="#lazer">Lazer</a>
+      <a href="#tecnologia">Tecnologia</a>
+      <a href="#aovivo">Ao Vivo</a>
+    </nav>
+
+    <div class="actions">
+      <button class="icon-btn" id="soundBtn" aria-pressed="false" aria-label="Ativar sons de interface">🔇</button>
+      <button class="btn btn-primary" id="enterBtn">Entrar</button>
+      <button class="btn-admin hidden" id="adminBtn">Painel ADM</button>
+      <a class="hidden" id="perfilLink" href="#perfil" title="Meu perfil">
+        <img class="avatar" id="perfilImg" alt="Perfil" />
+      </a>
+      <button class="mini hidden" id="logoutBtn">Sair</button>
+    </div>
+  </div>
+</header>
+
+<!-- ================= BARRA DE ALERTA ================= -->
+<div id="alertBar" class="alertbar hidden">
+  <div class="wrap">
+    <span id="alertText"></span>
+    <button class="x" id="alertClose" aria-label="Fechar alerta">✕</button>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-stage" id="heroStage"><div class="hero-empty">Carregando destaques...</div></div>
+    <div class="hero-dots" id="heroDots"></div>
+  </div>
+</section>
+
+<!-- ================= PLACAR ================= -->
+<section class="section" id="aovivo">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kick" id="liveKick">Cobertura ao vivo</p>
+        <h2>Placar Piranga</h2>
+      </div>
+      <span id="liveBadge" class="chip-live hidden"><i class="dot"></i> Ao vivo</span>
+    </div>
+    <div class="live-card" id="liveCard"><div class="empty" style="margin:16px">Carregando partidas...</div></div>
+  </div>
+</section>
+
+<!-- ================= JOGOS ================= -->
+<section class="section" id="esporte" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="kick">Competições da região</p>
+        <h2>Esporte Regional</h2>
+      </div>
+      <select id="compFilter" class="input" style="max-width:250px;padding:9px 12px;font-size:13px">
+        <option value="">Todas as competições</option>
+      </select>
+    </div>
+    <div class="match-list" id="matchList"><div class="empty">Carregando jogos...</div></div>
+  </div>
+</section>
+
+<!-- ================= NOTÍCIAS ================= -->
+<section class="section" id="noticias" style="padding-top:0">
+  <div class="wrap" id="newsFeed"></div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="cta">
+      <h3>Venha patrocinar a TV que mais cresce na região, TV do Vale do Piranga!</h3>
+      <p>Mídia regional com audiência qualificada, cobertura esportiva ao vivo e presença digital em toda a bacia do Piranga.</p>
+      <a class="btn btn-primary" id="waBtn" href="#" target="_blank" rel="noreferrer">Falar com o comercial</a>
+    </div>
+
+    <div class="foot-cols">
+      <div>
+        <h4>TV do Vale do Piranga</h4>
+        <ul><li>Notícia, esporte e cultura do Vale, com a credibilidade de quem é da região.</li></ul>
+      </div>
+      <div>
+        <h4>Navegação</h4>
+        <ul>
+          <li><a href="#noticias">Notícias</a></li>
+          <li><a href="#esporte">Esporte Regional</a></li>
+          <li><a href="#cultura">Cultura</a></li>
+          <li><a href="#lazer">Lazer</a></li>
+          <li><a href="#tecnologia">Tecnologia</a></li>
+          <li><a href="#aovivo">Ao Vivo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contato</h4>
+        <ul>
+          <li id="footEmail">contato@tvvaledopiranga.com.br</li>
+          <li id="footWa">WhatsApp</li>
+          <li>Sede: Ponte Nova, MG</li>
+          <li>@tvvaledopiranga</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Institucional</h4>
+        <ul>
+          <li><a href="#termos">Termos de uso</a></li>
+          <li><a href="#privacidade">Política de privacidade</a></li>
+          <li><a href="#anuncie">Anuncie</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="foot-bottom">
+      <span>© <span id="yrFoot">2026</span> TV do Vale do Piranga. Desde <span id="yrBase">2021</span>. Todos os direitos reservados.</span>
+      <span>Feito na região, para a região.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= MODAL LOGIN ================= -->
+<div class="modal" id="loginModal">
+  <div class="modal-card">
+    <button class="modal-close close" data-close="loginModal" aria-label="Fechar">✕</button>
+    <h3>Entrar no portal</h3>
+    <p class="sub">Comente nas matérias e acompanhe o Placar Piranga em tempo real.</p>
+
+    <button class="btn btn-ghost" id="googleBtn" style="width:100%;justify-content:center">
+      Entrar com Google
+    </button>
+
+    <div class="muted" style="text-align:center;font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin:16px 0">
+      ou use e-mail
+    </div>
+
+    <form id="loginForm">
+      <div class="field">
+        <label for="authEmail">E-mail</label>
+        <input class="input" id="authEmail" type="email" autocomplete="email" required placeholder="voce@email.com" />
+      </div>
+      <div class="field">
+        <label for="authPass">Senha</label>
+        <input class="input" id="authPass" type="password" autocomplete="current-password" required minlength="6" placeholder="mínimo 6 caracteres" />
+      </div>
+      <div class="row-btns">
+        <button class="btn btn-primary" type="submit" style="flex:1;justify-content:center">Entrar</button>
+        <button class="btn btn-ghost" type="button" id="signupBtn">Criar conta</button>
+      </div>
+      <p class="muted" id="authMsg" style="font-size:12px;margin-top:10px"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ================= MODAL MATÉRIA ================= -->
+<div class="modal" id="readerModal">
+  <div class="modal-card wide">
+    <button class="modal-close close" data-close="readerModal" aria-label="Fechar">✕</button>
+    <div id="readerContent"></div>
+  </div>
+</div>
+
+<!-- ================= MODAL SETUP ================= -->
+<div class="modal" id="setupModal">
+  <div class="modal-card">
+    <h3>Conectar ao banco</h3>
+    <p class="sub">
+      Preencha a URL e a chave anon do seu projeto Supabase. Fica salvo apenas neste navegador,
+      para você testar antes de injetar no arquivo.
+    </p>
+    <div class="field">
+      <label for="setUrl">Project URL</label>
+      <input class="input" id="setUrl" placeholder="https://xxxxx.supabase.co" />
+    </div>
+    <div class="field">
+      <label for="setKey">Anon public key</label>
+      <input class="input" id="setKey" placeholder="sb_publishable_..." />
+    </div>
+    <div class="row-btns">
+      <button class="btn btn-primary" id="setSave" style="flex:1;justify-content:center">Salvar e conectar</button>
+    </div>
+    <p class="hint">Use somente a chave anon ou publishable. A secret nunca vai para o navegador.</p>
+  </div>
+</div>
+
+<!-- ================= DRAWER ADMIN ================= -->
+<div class="drawer" id="adminDrawer">
+  <div class="drawer-head">
+    <h3>Painel ADM</h3>
+    <button class="modal-close" id="adminClose" aria-label="Fechar">✕</button>
+  </div>
+  <div class="adm-tabs" id="admTabs"></div>
+  <div class="drawer-body" id="adminBody"></div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- ================= APLICAÇÃO ================= -->
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+
+/* ---------------- CONFIG ---------------- */
+const BASE = window.TVP_CONFIG || {};
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem('tvp:cfg') || '{}'); } catch (e) { saved = {}; }
+const CFG = Object.assign({}, BASE, saved);
+
+const isPlaceholder = function (v) { return !v || String(v).slice(0, 2) === '__'; };
+const CONFIG_OK = !isPlaceholder(CFG.SUPABASE_URL) && !isPlaceholder(CFG.SUPABASE_ANON_KEY);
+
+const state = {
+  db: null, user: null, profile: null,
+  hero: [], heroIndex: 0, heroTimer: null,
+  posts: [], matches: [], competitions: [], competitionFilter: null,
+  active: null, events: [], scorers: [], lineups: {}, tab: 'eventos',
+  openPost: null, comments: [],
+  sound: false,
+  adminTab: 'jogo',
+  media: [], compsAdmin: [], syncSources: [], syncRuns: [], users: [], modComments: [],
+  alertDismissed: false
+};
+
+const EVENT_META = {
+  goal:           { icon: '⚽', label: 'Gol' },
+  penalty_goal:   { icon: '🎯', label: 'Gol de pênalti' },
+  penalty_missed: { icon: '❌', label: 'Pênalti perdido' },
+  own_goal:       { icon: '🙃', label: 'Gol contra' },
+  yellow_card:    { icon: '🟨', label: 'Cartão amarelo' },
+  red_card:       { icon: '🟥', label: 'Cartão vermelho' }
+};
+
+const $ = function (id) { return document.getElementById(id); };
+const esc = function (s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    if (c === '&') return '&amp;';
+    if (c === '<') return '&lt;';
+    if (c === '>') return '&gt;';
+    if (c === '"') return '&quot;';
+    return '&#39;';
+  });
+};
+const pad = function (n) { return String(n).padStart(2, '0'); };
+const fallbackAvatar = 'data:image/svg+xml;utf8,' + encodeURIComponent(
+  '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"><rect width="40" height="40" fill="#202027"/><text x="20" y="25" font-size="13" fill="#8A8A97" text-anchor="middle" font-family="sans-serif">TV</text></svg>'
+);
+
+let toastTimer = null;
+function toast(msg) {
+  const el = $('toast');
+  el.textContent = msg;
+  el.classList.add('on');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(function () { el.classList.remove('on'); }, 3200);
+}
+
+/* ---------------- SOM ---------------- */
+let audioCtx = null;
+const RECIPES = {
+  click: { f: [880], d: 0.055, t: 'triangle', g: 0.055 },
+  tab:   { f: [640, 960], d: 0.085, t: 'sine', g: 0.05 },
+  card:  { f: [320, 190], d: 0.14, t: 'square', g: 0.035 },
+  goal:  { f: [523, 659, 784, 1046], d: 0.42, t: 'triangle', g: 0.06 }
+};
+
+function getCtx() {
+  if (!audioCtx) {
+    const C = window.AudioContext || window.webkitAudioContext;
+    if (!C) return null;
+    audioCtx = new C();
+  }
+  if (audioCtx.state === 'suspended') audioCtx.resume();
+  return audioCtx;
+}
+
+function play(name) {
+  if (!state.sound) return;
+  const ctx = getCtx();
+  if (!ctx) return;
+  const r = RECIPES[name] || RECIPES.click;
+  const step = r.d / r.f.length;
+  r.f.forEach(function (freq, i) {
+    const at = ctx.currentTime + i * step;
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = r.t;
+    osc.frequency.setValueAtTime(freq, at);
+    gain.gain.setValueAtTime(0.0001, at);
+    gain.gain.exponentialRampToValueAtTime(r.g, at + 0.012);
+    gain.gain.exponentialRampToValueAtTime(0.0001, at + step * 0.95);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(at);
+    osc.stop(at + step);
+  });
+}
+
+/* ---------------- TOKENS ---------------- */
+function fillTokens() {
+  const ano = isPlaceholder(CFG.FOUNDATION_YEAR) ? '2021' : String(CFG.FOUNDATION_YEAR);
+  $('yrHead').textContent = ano;
+  $('yrBase').textContent = ano;
+  $('yrFoot').textContent = String(new Date().getFullYear());
+
+  if (!isPlaceholder(CFG.CONTACT_EMAIL)) $('footEmail').textContent = CFG.CONTACT_EMAIL;
+
+  if (!isPlaceholder(CFG.WHATSAPP)) {
+    const wa = String(CFG.WHATSAPP).replace(/\D/g, '');
+    $('footWa').textContent = 'WhatsApp: ' + CFG.WHATSAPP;
+    $('waBtn').href = 'https://wa.me/' + wa + '?text=' + encodeURIComponent('Quero patrocinar a TV do Vale do Piranga');
+  }
+}
+
+/* ---------------- HERO ---------------- */
+function renderHero() {
+  const stage = $('heroStage');
+  const dots = $('heroDots');
+
+  if (!state.hero.length) {
+    stage.innerHTML = '<div class="hero-empty">Nenhum destaque publicado ainda.</div>';
+    dots.innerHTML = '';
+    return;
+  }
+
+  const p = state.hero[state.heroIndex % state.hero.length];
+
+  stage.innerHTML =
+    (p.cover_url ? '<img class="hero-img" src="' + esc(p.cover_url) + '" alt="' + esc(p.title) + '">' : '') +
+    '<div class="hero-shade"></div>' +
+    '<div class="hero-body">' +
+      '<span class="chip">Destaque do dia</span>' +
+      '<h1>' + esc(p.title) + '</h1>' +
+      (p.excerpt ? '<p>' + esc(p.excerpt) + '</p>' : '') +
+      '<button class="btn btn-primary" data-open="' + esc(p.id) + '">Ler a matéria →</button>' +
+    '</div>' +
+    '<div class="hero-nav">' +
+      '<button data-hero="-1" aria-label="Destaque anterior">‹</button>' +
+      '<button data-hero="1" aria-label="Próximo destaque">›</button>' +
+    '</div>';
+
+  dots.innerHTML = state.hero.map(function (item, i) {
+    return '<button data-dot="' + i + '" class="' + (i === state.heroIndex ? 'on' : '') +
+           '" aria-label="Destaque ' + (i + 1) + '"><i></i></button>';
+  }).join('');
+}
+
+function startHero() {
+  clearInterval(state.heroTimer);
+  if (state.hero.length < 2) return;
+  state.heroTimer = setInterval(function () {
+    state.heroIndex = (state.heroIndex + 1) % state.hero.length;
+    renderHero();
+  }, 6500);
+}
+
+/* ---------------- PLACAR ---------------- */
+function clockOf(m) {
+  if (!m) return { label: '--:--', minutes: 0 };
+  const base = m.clock_base_seconds || 0;
+  const running = (m.status === 'live' && m.clock_started_at)
+    ? Math.max(0, Math.floor((Date.now() - new Date(m.clock_started_at).getTime()) / 1000))
+    : 0;
+  const total = base + running;
+  return {
+    label: pad(Math.min(130, Math.floor(total / 60))) + ':' + pad(total % 60),
+    minutes: Math.floor(total / 60)
+  };
+}
+
+function teamBlock(t) {
+  if (!t) return '<div class="team"><b>--</b></div>';
+  return '<div class="team">' +
+    '<div class="crest">' +
+      (t.crest_url
+        ? '<img src="' + esc(t.crest_url) + '" alt="' + esc(t.name) + '" style="width:76%;height:76%;object-fit:contain">'
+        : esc(t.short_name || String(t.name).slice(0, 3))) +
+    '</div><b>' + esc(t.name) + '</b></div>';
+}
+
+function tabBtn(key, label) {
+  return '<button class="tab ' + (state.tab === key ? 'on' : '') + '" data-tab="' + key + '">' + label + '</button>';
+}
+
+function paneEvents() {
+  if (!state.events.length) {
+    return '<div class="empty">A bola ainda não rolou. Os lances aparecem aqui em tempo real.</div>';
+  }
+  return state.events.map(function (e) {
+    const meta = EVENT_META[e.type] || { icon: '•', label: e.type };
+    return '<div class="ev">' +
+      '<span class="min">' + e.minute + "'</span>" +
+      '<span>' + meta.icon + '</span>' +
+      '<span class="who"><b>' + esc(e.player_name || meta.label) + '</b>' +
+        (e.player_name ? ' · ' + meta.label : '') + '</span>' +
+      (e.shirt_number ? '<span class="num">#' + e.shirt_number + '</span>' : '') +
+    '</div>';
+  }).join('');
+}
+
+function paneLineups() {
+  const m = state.active;
+  const sides = [m.home, m.away];
+  return '<div style="display:grid;gap:22px" class="lineup">' + sides.map(function (t) {
+    const list = state.lineups[t.id] || [];
+    const items = list.length
+      ? list.map(function (p) {
+          return '<li><span class="sh">' + (p.shirt_number || '-') + '</span><span>' + esc(p.full_name) + '</span>' +
+                 (p.position ? '<span class="pos">' + esc(p.position) + '</span>' : '') + '</li>';
+        }).join('')
+      : '<li class="muted">Escalação não divulgada.</li>';
+    return '<div><h4>' + esc(t.name) + '</h4><ul>' + items + '</ul></div>';
+  }).join('') + '</div>';
+}
+
+function paneScorers() {
+  if (!state.scorers.length) return '<div class="empty">Nenhum gol registrado.</div>';
+  return state.scorers.slice().sort(function (a, b) { return b.goals - a.goals; }).map(function (s) {
+    return '<div class="scorer ' + (s.goals >= 4 ? 'hot' : '') + '">' +
+      '<span class="num">#' + (s.shirt_number || '--') + '</span>' +
+      '<span>' + esc(s.player_name) + '</span>' +
+      (s.penalty_goals ? '<span class="muted" style="font-size:11px">' + s.penalty_goals + ' de pênalti</span>' : '') +
+      '<span class="g">' + s.goals + '</span>' +
+    '</div>';
+  }).join('');
+}
+
+function renderLive() {
+  const card = $('liveCard');
+  const badge = $('liveBadge');
+  const kick = $('liveKick');
+  const m = state.active;
+
+  if (!m) {
+    card.innerHTML = '<div class="empty" style="margin:16px">Nenhuma partida cadastrada. Rode o seed no Supabase.</div>';
+    badge.classList.add('hidden');
+    return;
+  }
+
+  const live = m.status === 'live';
+  badge.classList.toggle('hidden', !live);
+
+  const liga = m.league ? m.league.short_name : null;
+  kick.textContent = (liga ? liga + ' · ' : '') + (m.competition ? m.competition.name : m.championship);
+
+  const four = state.scorers.filter(function (s) { return s.goals >= 4; });
+  const historic = four.length
+    ? '<div class="historic">' + four.map(function (s) {
+        return '🔥 <b>' + esc(s.player_name) + '</b> marcou ' + s.goals + ' gols nesta partida. Atuação histórica.';
+      }).join('<br>') + '</div>'
+    : '';
+
+  const pane = state.tab === 'eventos' ? paneEvents()
+             : state.tab === 'escalacoes' ? paneLineups()
+             : paneScorers();
+
+  card.innerHTML =
+    '<div class="live-top">' +
+      '<span>' + esc(m.venue || 'Estádio a confirmar') + '</span>' +
+      '<span class="clock ' + (live ? 'on' : '') + '" id="clockLabel">' +
+        (m.status === 'scheduled' ? 'A iniciar' : clockOf(m).label) +
+      '</span>' +
+    '</div>' +
+    '<div class="score-row">' +
+      teamBlock(m.home) +
+      '<div class="score">' +
+        '<span>' + m.home_score + '</span><span class="x">×</span><span>' + m.away_score + '</span>' +
+      '</div>' +
+      teamBlock(m.away) +
+    '</div>' +
+    historic +
+    '<div class="tabs">' +
+      tabBtn('eventos', 'Lances') +
+      tabBtn('escalacoes', 'Escalações') +
+      tabBtn('artilharia', 'Artilharia') +
+    '</div>' +
+    '<div class="pane">' + pane + '</div>';
+}
+
+function tickClock() {
+  const el = $('clockLabel');
+  if (!el || !state.active) return;
+  if (state.active.status === 'scheduled') return;
+  el.textContent = clockOf(state.active).label;
+}
+
+/* ---------------- JOGOS COM FILTRO ---------------- */
+function renderMatches() {
+  const box = $('matchList');
+  const label = { live: 'Ao vivo', halftime: 'Intervalo', finished: 'Encerrado', scheduled: 'Agendado', postponed: 'Adiado' };
+
+  if (!state.matches.length) {
+    box.innerHTML = '<div class="empty">Nenhum jogo cadastrado ainda.</div>';
+    return;
+  }
+
+  const list = state.competitionFilter
+    ? state.matches.filter(function (m) { return m.competition_id === state.competitionFilter; })
+    : state.matches;
+
+  if (!list.length) {
+    box.innerHTML = '<div class="empty">Nenhum jogo nesta competição.</div>';
+    return;
+  }
+
+  box.innerHTML = list.map(function (m) {
+    const d = new Date(m.kickoff_at);
+    const dia = pad(d.getDate()) + '/' + pad(d.getMonth() + 1);
+    const nome = (m.home ? m.home.short_name : '?') + ' ' + m.home_score + ' × ' + m.away_score + ' ' + (m.away ? m.away.short_name : '?');
+    return '<button class="match-row" data-match="' + esc(m.id) + '">' +
+      '<span class="d">' + dia + '</span>' +
+      '<span class="t">' + esc(nome) + '</span>' +
+      '<span class="st ' + (m.status === 'live' ? 'live' : '') + '">' + (label[m.status] || m.status) + '</span>' +
+    '</button>';
+  }).join('');
+}
+
+async function loadCompetitions() {
+  const res = await state.db.from('competitions')
+    .select('id, slug, name, short_name, logo_url')
+    .eq('is_active', true)
+    .order('name');
+
+  state.competitions = res.data || [];
+
+  const sel = $('compFilter');
+  sel.innerHTML = '<option value="">Todas as competições</option>' +
+    state.competitions.map(function (c) {
+      return '<option value="' + esc(c.id) + '">' + esc(c.name) + '</option>';
+    }).join('');
+}
+
+async function loadAlerts() {
+  if (state.alertDismissed) return;
+
+  const res = await state.db.from('site_alerts')
+    .select('id, kind, title, body, href')
+    .eq('is_active', true)
+    .order('starts_at', { ascending: false })
+    .limit(1);
+
+  const bar = $('alertBar');
+  const data = res.data || [];
+  if (!data.length) { bar.classList.add('hidden'); return; }
+
+  const a = data[0];
+  const link = a.href || '#aovivo';
+  $('alertText').innerHTML =
+    '<a href="' + esc(link) + '"><b>' + esc(a.title) + '</b>' +
+    (a.body ? ' · ' + esc(a.body) : '') + '</a>';
+  bar.classList.remove('hidden');
+}
+
+/* ---------------- LISTA DE COMPETIÇÕES (ADM) ---------------- */
+function compName(id) {
+  const c = state.competitions.find(function (x) { return x.id === id; });
+  return c ? c.name : null;
+}
+
+/* ---------------- NOTÍCIAS ---------------- */
+const CATS = [
+  { key: 'cultura',    label: 'Cultura',    id: 'cultura' },
+  { key: 'lazer',      label: 'Lazer',      id: 'lazer' },
+  { key: 'tecnologia', label: 'Tecnologia', id: 'tecnologia' },
+  { key: 'regional',   label: 'Regional',   id: 'regional' },
+  { key: 'esporte',    label: 'Esporte',    id: 'esporte-feed' },
+  { key: 'noticias',   label: 'Notícias',   id: 'noticias-feed' }
+];
+
+function cardPost(p) {
+  return '<button class="card-post" data-open="' + esc(p.id) + '">' +
+    '<span class="thumb">' +
+      (p.cover_url ? '<img src="' + esc(p.cover_url) + '" alt="' + esc(p.title) + '" loading="lazy">' : '') +
+      '<span class="cat">' + esc(p.category) + '</span>' +
+    '</span>' +
+    '<span class="body">' +
+      '<h3>' + esc(p.title) + '</h3>' +
+      (p.excerpt ? '<p>' + esc(p.excerpt) + '</p>' : '') +
+      '<span class="meta">' +
+        (p.published_at
+          ? new Date(p.published_at).toLocaleDateString('pt-BR', { day: '2-digit', month: 'long' })
+          : '') +
+      '</span>' +
+    '</span>' +
+  '</button>';
+}
+
+function renderNews() {
+  const box = $('newsFeed');
+
+  if (!state.posts.length) {
+    box.innerHTML = '<div class="sec-head"><div><p class="kick">Últimas</p><h2>Feed de notícias</h2></div></div>' +
+      '<div class="empty">Nenhuma matéria publicada. Publique pelo painel do Supabase.</div>';
+    return;
+  }
+
+  const html = CATS.map(function (c) {
+    const list = state.posts.filter(function (p) { return p.category === c.key; }).slice(0, 6);
+    if (!list.length) return '';
+    return '<section class="section" id="' + c.id + '" style="padding:26px 0">' +
+      '<div class="sec-head"><div><p class="kick">' + c.label + '</p><h2>' + c.label + '</h2></div></div>' +
+      '<div class="grid-news">' + list.map(cardPost).join('') + '</div>' +
+    '</section>';
+  }).join('');
+
+  box.innerHTML = html || '<div class="empty">Nenhuma matéria publicada.</div>';
+}
+
+/* ---------------- MATÉRIA + COMENTÁRIOS ---------------- */
+function openReader(postId) {
+  const p = state.posts.find(function (x) { return x.id === postId; });
+  if (!p) return;
+  state.openPost = p;
+  play('click');
+
+  const paras = String(p.content || '').split(/\n{2,}/).map(function (t) {
+    return '<p>' + esc(t) + '</p>';
+  }).join('');
+
+  $('readerContent').innerHTML =
+    '<span class="chip">' + esc(p.category) + '</span>' +
+    '<h3 style="margin-top:12px;font-size:clamp(20px,3vw,30px);line-height:1.15">' + esc(p.title) + '</h3>' +
+    '<p class="muted" style="font-size:12px;margin:8px 0 0">' +
+      (p.published_at
+        ? new Date(p.published_at).toLocaleString('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' })
+        : '') +
+    '</p>' +
+    '<div class="reader-body">' + (paras || '<p>' + esc(p.excerpt || '') + '</p>') + '</div>' +
+    '<div id="commentsBox"></div>';
+
+  $('readerModal').classList.add('on');
+  renderComments();
+  loadComments(p.id);
+}
+
+function renderComments() {
+  const box = $('commentsBox');
+  if (!box) return;
+  const p = state.openPost;
+  if (!p) return;
+
+  let composer = '';
+  if (!state.user) {
+    composer = '<div class="notice">Faça login com seu Google/E-mail para comentar.' +
+      '<div class="row-btns" style="justify-content:center"><button class="btn btn-primary" data-login="1">Entrar e comentar</button></div></div>';
+  } else if (state.profile && state.profile.is_restricted) {
+    composer = '<div class="notice warn"><b>Sua conta está no modo de apenas leitura.</b><br>' +
+      'Você continua acompanhando todo o conteúdo, mas o envio de comentários está suspenso.</div>';
+  } else {
+    composer = '<form id="cmtForm">' +
+      '<textarea class="input" id="cmtBody" rows="3" maxlength="1200" placeholder="Comente com respeito. A torcida do Vale agradece."></textarea>' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">' +
+        '<span class="muted" style="font-size:11px"><span id="cmtCount">0</span>/1200</span>' +
+        '<button class="btn btn-primary" type="submit">Publicar</button>' +
+      '</div></form>';
+  }
+
+  const list = state.comments.length
+    ? state.comments.map(function (c) {
+        const a = c.author || {};
+        return '<div class="cmt">' +
+          '<img src="' + esc(a.avatar_url || fallbackAvatar) + '" alt="">' +
+          '<div style="min-width:0">' +
+            '<div class="nm">' + esc(a.display_name || 'Leitor') +
+              '<span class="dt">' + new Date(c.created_at).toLocaleString('pt-BR', {
+                day: '2-digit', month: 'short', hour: '2-digit', minute: '2-digit'
+              }) + '</span>' +
+            '</div>' +
+            '<div class="bd">' + esc(c.body) + '</div>' +
+          '</div>' +
+        '</div>';
+      }).join('')
+    : '<div class="empty">Seja o primeiro a comentar.</div>';
+
+  box.innerHTML =
+    '<h3 style="font-size:17px;margin-top:6px">Comentários <span class="muted" style="font-weight:400">(' +
+      state.comments.length + ')</span></h3>' +
+    '<div style="margin:14px 0">' + composer + '</div>' + list;
+
+  const ta = $('cmtBody');
+  if (ta) {
+    ta.addEventListener('input', function () { $('cmtCount').textContent = ta.value.length; });
+  }
+
+  const form = $('cmtForm');
+  if (form) {
+    form.addEventListener('submit', async function (ev) {
+      ev.preventDefault();
+      const body = ($('cmtBody').value || '').trim();
+      if (body.length < 2) return;
+
+      const res = await state.db.from('comments')
+        .insert({ post_id: p.id, author_id: state.user.id, body: body });
+
+      if (res.error) { toast('Não foi possível publicar. Tente novamente.'); return; }
+
+      play('click');
+      $('cmtBody').value = '';
+      loadComments(p.id);
+    });
+  }
+}
+
+async function loadComments(postId) {
+  const res = await state.db.from('comments')
+    .select('id, body, created_at, author_id, author:public_profiles(display_name, avatar_url)')
+    .eq('post_id', postId)
+    .is('deleted_at', null)
+    .eq('is_hidden', false)
+    .order('created_at', { ascending: false })
+    .limit(40);
+
+  state.comments = res.data || [];
+  renderComments();
+}
+
+/* ---------------- SESSÃO ---------------- */
+async function loadSession() {
+  const s = await state.db.auth.getUser();
+  state.user = (s.data && s.data.user) || null;
+
+  if (!state.user) { state.profile = null; paintUser(); return; }
+
+  const p = await state.db.from('profiles')
+    .select('id, display_name, avatar_url, role, is_restricted, restricted_reason')
+    .eq('id', state.user.id)
+    .single();
+
+  state.profile = p.data || null;
+  paintUser();
+}
+
+function paintUser() {
+  const enter = $('enterBtn');
+  const admin = $('adminBtn');
+  const link = $('perfilLink');
+  const img = $('perfilImg');
+  const out = $('logoutBtn');
+
+  if (!state.user) {
+    enter.classList.remove('hidden');
+    admin.classList.add('hidden');
+    link.classList.add('hidden');
+    out.classList.add('hidden');
+    return;
+  }
+
+  enter.classList.add('hidden');
+  out.classList.remove('hidden');
+  link.classList.remove('hidden');
+  img.src = (state.profile && state.profile.avatar_url) || fallbackAvatar;
+  img.alt = (state.profile && state.profile.display_name) || 'Perfil';
+  admin.classList.toggle('hidden', !(state.profile && state.profile.role === 'admin'));
+}
+
+/* ---------------- DADOS ---------------- */
+async function loadPosts() {
+  const res = await state.db.from('posts')
+    .select('id, slug, title, excerpt, cover_url, content, category, is_featured, published_at')
+    .eq('status', 'published')
+    .order('published_at', { ascending: false })
+    .limit(40);
+
+  state.posts = res.data || [];
+
+  const feat = state.posts.filter(function (p) { return p.is_featured; });
+  state.hero = (feat.length ? feat : state.posts).slice(0, 5);
+  state.heroIndex = 0;
+
+  renderHero();
+  renderNews();
+  startHero();
+}
+
+async function loadMatches() {
+  const res = await state.db.from('matches')
+    .select('id, championship, status, kickoff_at, home_score, away_score, venue, ' +
+            'clock_started_at, clock_base_seconds, league_id, competition_id, ' +
+            'home_team_id, away_team_id, ' +
+            'home:teams!matches_home_team_id_fkey(name, short_name, crest_url), ' +
+            'away:teams!matches_away_team_id_fkey(name, short_name, crest_url), ' +
+            'league:leagues(short_name, name), ' +
+            'competition:competitions(name, short_name, logo_url)')
+    .order('kickoff_at', { ascending: false })
+    .limit(40);
+
+  state.matches = res.data || [];
+
+  const live = state.matches.find(function (m) { return m.status === 'live' || m.status === 'halftime'; });
+  const chosen = live || state.matches[0] || null;
+
+  if (chosen && (!state.active || state.active.id !== chosen.id || !state.active.home)) {
+    await setActive(chosen);
+  } else {
+    renderMatches();
+    renderLive();
+  }
+}
+
+async function setActive(m) {
+  state.active = m || null;
+
+  if (!m) { renderMatches(); renderLive(); return; }
+
+  const ids = [m.home_team_id, m.away_team_id];
+
+  const results = await Promise.all([
+    state.db.from('match_events').select('*').eq('match_id', m.id).order('minute', { ascending: false }),
+    state.db.from('match_scorers').select('*').eq('match_id', m.id),
+    state.db.from('players').select('id, team_id, full_name, shirt_number, position')
+      .in('team_id', ids).order('shirt_number')
+  ]);
+
+  state.events = results[0].data || [];
+  state.scorers = results[1].data || [];
+
+  const players = results[2].data || [];
+  state.lineups = {};
+  players.forEach(function (p) {
+    if (!state.lineups[p.team_id]) state.lineups[p.team_id] = [];
+    state.lineups[p.team_id].push(p);
+  });
+
+  renderMatches();
+  renderLive();
+}
+
+/* ---------------- TEMPO REAL ---------------- */
+let reloadTimer = null;
+function scheduleReload() {
+  clearTimeout(reloadTimer);
+  reloadTimer = setTimeout(function () {
+    loadMatches();
+    loadPosts();
+    if (state.openPost) loadComments(state.openPost.id);
+  }, 700);
+}
+
+function subscribeRealtime() {
+  state.db.channel('tvp-portal')
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'matches' }, function () { loadMatches(); })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'match_events' }, function () {
+      if (state.active) setActive(state.active);
+      if (state.adminTab === 'jogo' && $('adminDrawer').classList.contains('on')) renderAdmin();
+    })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'comments' }, function () {
+      if (state.openPost) loadComments(state.openPost.id);
+    })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'posts' }, function () { scheduleReload(); })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'site_alerts' }, function () { loadAlerts(); })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'competitions' }, function () {
+      loadCompetitions();
+      if (state.adminTab === 'competicoes') renderAdmin();
+    })
+    .on('postgres_changes', { event: '*', schema: 'public', table: 'sync_runs' }, function () {
+      if (state.adminTab === 'sync') renderAdmin();
+    })
+    .subscribe();
+}
+
+/* ---------------- PAINEL ADM ---------------- */
+const ADM_TABS = [
+  { key: 'jogo', label: 'Partida' },
+  { key: 'competicoes', label: 'Competições' },
+  { key: 'midias', label: 'Mídias' },
+  { key: 'sync', label: 'Sync LDU' },
+  { key: 'moderacao', label: 'Moderação' }
+];
+
+function openAdmin() {
+  if (!state.profile || state.profile.role !== 'admin') {
+    toast('Acesso restrito a administradores.');
+    return;
+  }
+  $('adminDrawer').classList.add('on');
+  renderAdmin();
+}
+
+function renderAdminTabs() {
+  $('admTabs').innerHTML = ADM_TABS.map(function (t) {
+    return '<button class="adm-tab ' + (state.adminTab === t.key ? 'on' : '') +
+      '" data-admtab="' + t.key + '">' + t.label + '</button>';
+  }).join('');
+}
+
+async function renderAdmin() {
+  renderAdminTabs();
+  const box = $('adminBody');
+
+  if (state.adminTab === 'jogo') return renderAdminMatch(box);
+  if (state.adminTab === 'competicoes') return renderAdminCompetitions(box);
+  if (state.adminTab === 'midias') return renderAdminMedia(box);
+  if (state.adminTab === 'sync') return renderAdminSync(box);
+  return renderAdminModeration(box);
+}
+
+/* ----- ADM: partida ----- */
+function renderAdminMatch(box) {
+  const m = state.active;
+
+  if (!m) {
+    box.innerHTML = '<div class="empty">Selecione uma partida na lista de jogos.</div>';
+    return;
+  }
+
+  const teams = [m.home, m.away];
+
+  const teamsHtml = teams.map(function (t) {
+    const players = state.lineups[t.id] || [];
+    const opts = players.map(function (p) {
+      return '<option value="' + esc(p.id) + '">' + (p.shirt_number || '--') + ' ' + esc(p.full_name) + '</option>';
+    }).join('');
+
+    const scorers = state.scorers.filter(function (s) { return s.team_id === t.id; }).map(function (s) {
+      return '<div class="admin-line"><span class="grow">' + esc(s.player_name) + '</span>' +
+        '<b style="color:#A2EBC9">' + s.goals + '</b>' +
+        (s.goals >= 4 ? '<span class="mini on">4+</span>' : '') + '</div>';
+    }).join('');
+
+    return '<div style="margin-bottom:14px">' +
+      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;gap:8px">' +
+        '<b style="font-size:13px;color:#fff">' + esc(t.name) + '</b>' +
+        '<select class="mini" data-sel="' + esc(t.id) + '" style="max-width:150px">' +
+          '<option value="">atleta</option>' + opts +
+        '</select>' +
+      '</div>' +
+      '<div class="row-btns" style="margin-bottom:6px">' +
+        '<button class="ev-btn" data-ev="goal" data-team="' + esc(t.id) + '">⚽ Gol</button>' +
+        '<button class="ev-btn" data-ev="penalty_goal" data-team="' + esc(t.id) + '">🎯 Pênalti</button>' +
+        '<button class="ev-btn" data-ev="penalty_missed" data-team="' + esc(t.id) + '">❌ Perdido</button>' +
+        '<button class="ev-btn" data-ev="yellow_card" data-team="' + esc(t.id) + '">🟨 Amarelo</button>' +
+        '<button class="ev-btn" data-ev="red_card" data-team="' + esc(t.id) + '">🟥 Vermelho</button>' +
+        '<button class="ev-btn" data-ev="own_goal" data-team="' + esc(t.id) + '">🙃 Contra</button>' +
+      '</div>' + scorers + '</div>';
+  }).join('');
+
+  const timeline = state.events.length ? state.events.map(function (e) {
+    const meta = EVENT_META[e.type] || { icon: '•', label: e.type };
+    return '<div class="admin-line">' +
+      '<span class="grow">' + e.minute + "' " + meta.icon + ' ' + esc(e.player_name || meta.label) + '</span>' +
+      '<button class="mini danger" data-del="' + esc(e.id) + '">remover</button>' +
+    '</div>';
+  }).join('') : '<div class="empty">Nenhum lance.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Partida</h4>' +
+      '<div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;flex-wrap:wrap">' +
+        '<span class="clock ' + (m.status === 'live' ? 'on' : '') + '">' + clockOf(m).label + '</span>' +
+        '<span class="mini">' + esc(m.status) + '</span>' +
+        '<span style="margin-left:auto;font-family:var(--head);font-size:20px;color:#fff">' +
+          m.home_score + ' × ' + m.away_score + '</span>' +
+      '</div>' +
+      '<div style="font-size:11px;color:var(--soft2);margin-bottom:8px">' +
+        esc(m.championship) + '</div>' +
+      '<div class="row-btns">' +
+        '<button class="mini" data-clock="start">▶ Iniciar</button>' +
+        '<button class="mini" data-clock="pause">⏸ Pausar</button>' +
+        '<button class="mini" data-clock="finish">⏹ Encerrar</button>' +
+        '<button class="mini danger" data-clock="reset">Zerar</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="panel"><h4>Lançar evento</h4>' + teamsHtml + '</div>' +
+    '<div class="panel"><h4>Linha do tempo</h4>' + timeline + '</div>';
+}
+
+/* ----- ADM: competições ----- */
+async function renderAdminCompetitions(box) {
+  const res = await state.db.from('competitions')
+    .select('id, slug, name, short_name, season, is_active, logo_url, league:leagues(short_name)')
+    .order('name');
+
+  state.compsAdmin = res.data || [];
+
+  const rows = state.compsAdmin.map(function (c) {
+    const liga = c.league ? c.league.short_name : '—';
+    return '<div class="admin-line">' +
+      (c.logo_url
+        ? '<img class="thumb-sm" src="' + esc(c.logo_url) + '" alt="">'
+        : '<span class="thumb-sm"></span>') +
+      '<span class="grow"><b>' + esc(c.name) + '</b><br>' +
+        '<span style="font-size:10px;color:var(--soft2)">' + liga + ' · ' + esc(c.slug) + '</span></span>' +
+      '<button class="mini ' + (c.is_active ? 'on' : '') + '" data-comp-toggle="' + esc(c.id) +
+        '" data-val="' + (c.is_active ? 'false' : 'true') + '">' +
+        (c.is_active ? 'ativa' : 'inativa') + '</button>' +
+      '<button class="mini" data-comp-rename="' + esc(c.id) + '" data-name="' + esc(c.name) + '">nome</button>' +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhuma competição cadastrada.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Nova competição</h4>' +
+      '<div class="field"><label>Nome</label>' +
+        '<input class="input" id="compName" placeholder="Copa do Vale 2027" /></div>' +
+      '<div class="field"><label>Sigla</label>' +
+        '<input class="input" id="compShort" placeholder="Copa do Vale" /></div>' +
+      '<div class="field"><label>Liga</label>' +
+        '<select class="input" id="compLeague">' +
+          '<option value="">Sem liga</option>' +
+          '<option value="ldu">LDU</option>' +
+          '<option value="lmd">LMD</option>' +
+        '</select></div>' +
+      '<div class="field"><label>Temporada</label>' +
+        '<input class="input" id="compSeason" value="2026" /></div>' +
+      '<button class="btn btn-primary" id="compCreate" style="width:100%;justify-content:center">Criar competição</button>' +
+      '<p class="hint">O slug é gerado automaticamente a partir do nome e não muda depois.</p>' +
+    '</div>' +
+    '<div class="panel"><h4>Cadastradas</h4>' + rows + '</div>' +
+    '<div class="panel">' +
+      '<h4>Filtro do site</h4>' +
+      '<p class="hint">Competições inativas somem do seletor público e não aparecem no filtro do feed, ' +
+      'mas os jogos continuam no banco. Ative somente as que estão em disputa.</p>' +
+    '</div>';
+}
+
+/* ----- ADM: mídias ----- */
+async function renderAdminMedia(box) {
+  const res = await state.db.from('media_assets')
+    .select('id, key_name, image_url, kind, source')
+    .order('key_name');
+
+  state.media = res.data || [];
+
+  const rows = state.media.map(function (a) {
+    return '<div class="admin-line">' +
+      '<img class="thumb-sm" src="' + esc(a.image_url) + '" alt="">' +
+      '<span class="grow"><b>' + esc(a.key_name) + '</b><br>' +
+        '<span style="font-size:10px;color:var(--soft2)">' + esc(a.kind) + ' · ' + esc(a.source) + '</span></span>' +
+      '<button class="mini" data-media-key="' + esc(a.key_name) + '">copiar chave</button>' +
+      '<button class="mini" data-media-edit="' + esc(a.id) + '" data-key="' + esc(a.key_name) +
+        '" data-url="' + esc(a.image_url) + '">url</button>' +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhuma mídia cadastrada.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Nova chave de mídia</h4>' +
+      '<div class="field"><label>Chave (ex: logo1)</label>' +
+        '<input class="input" id="medKey" placeholder="logo1" /></div>' +
+      '<div class="field"><label>URL da imagem</label>' +
+        '<input class="input" id="medUrl" placeholder="https://..." /></div>' +
+      '<div class="field"><label>Tipo</label>' +
+        '<select class="input" id="medKind">' +
+          '<option value="logo">logo</option>' +
+          '<option value="crest">crest</option>' +
+          '<option value="banner">banner</option>' +
+          '<option value="photo">photo</option>' +
+        '</select></div>' +
+      '<div class="field"><label>Ou envie um arquivo</label>' +
+        '<input class="input" id="medFile" type="file" accept="image/*" /></div>' +
+      '<div class="row-btns">' +
+        '<button class="btn btn-primary" id="medSave" style="flex:1;justify-content:center">Salvar chave</button>' +
+      '</div>' +
+      '<p class="hint">Para o upload funcionar, crie um bucket público chamado ' +
+        '<b>media</b> em Storage. Sem ele, use a URL direta.</p>' +
+    '</div>' +
+    '<div class="panel"><h4>Chaves cadastradas</h4>' + rows + '</div>' +
+    '<div class="panel">' +
+      '<h4>Como usar</h4>' +
+      '<p class="hint">No cadastro de um time, preencha o campo <b>logo_key</b> com a chave, ' +
+      'por exemplo <b>logo1</b>. O banco resolve a URL e grava em <b>crest_url</b>, ' +
+      'e o site renderiza a imagem automaticamente. O mesmo vale para competições, no campo ' +
+      '<b>logo_key</b> delas.</p>' +
+    '</div>';
+}
+
+/* ----- ADM: sync ----- */
+async function renderAdminSync(box) {
+  const [srcRes, runRes] = await Promise.all([
+    state.db.from('sync_sources')
+      .select('id, key, label, base_url, interval_minutes, min_match_date, is_active, last_run_at, last_ok_at, last_error')
+      .order('label'),
+    state.db.from('sync_runs')
+      .select('id, source_id, started_at, finished_at, status, items_found, items_created, items_updated, message')
+      .order('started_at', { ascending: false })
+      .limit(8)
+  ]);
+
+  state.syncSources = srcRes.data || [];
+  state.syncRuns = runRes.data || [];
+
+  const sources = state.syncSources.map(function (s) {
+    const quando = s.last_run_at
+      ? new Date(s.last_run_at).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })
+      : 'nunca executou';
+
+    return '<div class="panel">' +
+      '<h4>' + esc(s.label) + '</h4>' +
+      '<div class="admin-line"><span class="grow">' + esc(s.base_url) + '</span></div>' +
+      '<div class="admin-line"><span class="grow">Intervalo</span><b>' + s.interval_minutes + ' min</b></div>' +
+      '<div class="admin-line"><span class="grow">Corte temporal</span><b>' +
+        new Date(s.min_match_date + 'T12:00:00').toLocaleDateString('pt-BR') + '</b></div>' +
+      '<div class="admin-line"><span class="grow">Última execução</span><b>' + esc(quando) + '</b></div>' +
+      (s.last_error
+        ? '<div class="notice warn" style="text-align:left;margin-top:8px;font-size:11px">' +
+            esc(s.last_error) + '</div>'
+        : '<div class="admin-line"><span class="grow">Status</span>' +
+            '<span class="mini on">ok</span></div>') +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhuma fonte cadastrada.</div>';
+
+  const runs = state.syncRuns.map(function (r) {
+    const cor = r.status === 'ok' ? 'on' : r.status === 'error' ? 'danger' : '';
+    return '<div class="admin-line">' +
+      '<span class="grow">' +
+        new Date(r.started_at).toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) +
+        ' · ' + (r.items_created || 0) + ' novos, ' + (r.items_updated || 0) + ' atualizados' +
+        (r.message ? '<br><span style="font-size:10px;color:var(--soft2)">' + esc(r.message) + '</span>' : '') +
+      '</span>' +
+      '<span class="mini ' + cor + '">' + esc(r.status) + '</span>' +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhuma execução registrada.</div>';
+
+  box.innerHTML =
+    sources +
+    '<div class="panel"><h4>Últimas execuções</h4>' + runs + '</div>' +
+    '<div class="panel">' +
+      '<h4>Disparo manual</h4>' +
+      '<p class="hint">A sincronização roda por worker externo, fora do navegador, ' +
+      'por causa da necessidade de navegador headless para renderizar o portal de origem. ' +
+      'Para rodar agora, execute no servidor ou no GitHub Actions o comando ' +
+      '<b>node worker/index.js</b>. O painel mostra o resultado em tempo real.</p>' +
+    '</div>';
+}
+
+/* ----- ADM: moderação ----- */
+async function renderAdminModeration(box) {
+  const [cRes, uRes] = await Promise.all([
+    state.db.from('comments')
+      .select('id, body, created_at, author_id, author:public_profiles(display_name)')
+      .is('deleted_at', null)
+      .order('created_at', { ascending: false })
+      .limit(15),
+    state.db.from('profiles')
+      .select('id, display_name, is_restricted, role')
+      .neq('role', 'admin')
+      .order('created_at', { ascending: false })
+      .limit(15)
+  ]);
+
+  state.modComments = cRes.data || [];
+  state.users = uRes.data || [];
+
+  const cmts = state.modComments.map(function (x) {
+    const nome = (x.author && x.author.display_name) || 'Leitor';
+    return '<div class="admin-line">' +
+      '<span class="grow"><b>' + esc(nome) + '</b>: ' + esc(x.body) + '</span>' +
+      '<button class="mini danger" data-delc="' + esc(x.id) + '">apagar</button></div>';
+  }).join('') || '<div class="empty">Nenhum comentário.</div>';
+
+  const users = state.users.map(function (p) {
+    return '<div class="admin-line">' +
+      '<span class="grow">' + esc(p.display_name) +
+        (p.is_restricted ? ' <span style="color:#FCD34D">(leitura)</span>' : '') + '</span>' +
+      '<button class="mini ' + (p.is_restricted ? '' : '') + '" data-restrict="' + esc(p.id) +
+        '" data-val="' + (p.is_restricted ? 'false' : 'true') + '">' +
+        (p.is_restricted ? 'liberar' : 'bloquear') + '</button>' +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhum usuário.</div>';
+
+  box.innerHTML =
+    '<div class="panel"><h4>Comentários recentes</h4>' + cmts + '</div>' +
+    '<div class="panel"><h4>Usuários</h4>' + users +
+      '<p class="hint">Bloquear aplica o modo leitura: a pessoa continua lendo tudo, ' +
+        'mas o banco recusa novos comentários, mesmo que ela chame a API direto.</p>' +
+    '</div>' +
+    '<div class="panel">' +
+      '<h4>Exclusão de conta</h4>' +
+      '<p class="hint">Apagar uma conta de vez exige a chave secreta do projeto, que nunca ' +
+        'pode ir para o navegador. Isso roda em um servidor, como uma Edge Function. ' +
+        'Enquanto isso, o modo leitura é a punição disponível aqui.</p>' +
+    '</div>';
+}
+
+/* ---------------- AÇÕES ---------------- */
+async function addEvent(teamId, type) {
+  const sel = document.querySelector('[data-sel="' + teamId + '"]');
+  const playerId = sel && sel.value ? sel.value : null;
+  const minute = clockOf(state.active).minutes;
+
+  play(type === 'goal' || type === 'penalty_goal' ? 'goal' : 'card');
+
+  const res = await state.db.rpc('register_match_event', {
+    p_match_id: state.active.id,
+    p_team_id: teamId,
+    p_type: type,
+    p_player_id: playerId,
+    p_player_name: null,
+    p_minute: minute > 0 ? minute : null,
+    p_note: null
+  });
+
+  if (res.error) { toast('Erro ao registrar: ' + res.error.message); return; }
+  toast('Lance registrado.');
+  await setActive(state.active);
+  renderAdmin();
+}
+
+async function clockAction(action) {
+  const res = await state.db.rpc('control_match_clock', {
+    p_match_id: state.active.id,
+    p_action: action
+  });
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast('Cronômetro: ' + action);
+  await loadMatches();
+  renderAdmin();
+}
+
+async function removeEvent(id) {
+  const res = await state.db.from('match_events').delete().eq('id', id);
+  if (res.error) { toast('Erro ao remover.'); return; }
+  await setActive(state.active);
+  renderAdmin();
+}
+
+async function deleteComment(id) {
+  const res = await state.db.from('comments')
+    .update({ deleted_at: new Date().toISOString() }).eq('id', id);
+
+  if (res.error) { toast('Erro ao apagar.'); return; }
+  toast('Comentário apagado.');
+
+  if (state.adminTab === 'moderacao') renderAdmin();
+  if (state.openPost) loadComments(state.openPost.id);
+}
+
+async function toggleRestrict(userId, value) {
+  const res = await state.db.rpc('set_user_restriction', {
+    p_user_id: userId,
+    p_restricted: value === 'true',
+    p_reason: value === 'true' ? 'Moderação do portal' : null
+  });
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast(value === 'true' ? 'Usuário em modo leitura.' : 'Usuário liberado.');
+  renderAdmin();
+}
+
+async function createCompetition() {
+  const name = ($('compName').value || '').trim();
+  const short = ($('compShort').value || '').trim();
+  const season = ($('compSeason').value || '').trim() || '2026';
+  const leagueSlug = $('compLeague').value;
+
+  if (name.length < 3) { toast('Informe o nome da competição.'); return; }
+
+  const slug = name.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+  let leagueId = null;
+  if (leagueSlug) {
+    const l = await state.db.from('leagues').select('id').eq('slug', leagueSlug).maybeSingle();
+    leagueId = l.data ? l.data.id : null;
+  }
+
+  const res = await state.db.from('competitions').insert({
+    slug: slug,
+    name: name,
+    short_name: short || name,
+    season: season,
+    league_id: leagueId,
+    source: 'manual',
+    is_active: true
+  });
+
+  if (res.error) { toast('Erro ao criar: ' + res.error.message); return; }
+
+  toast('Competição criada.');
+  await loadCompetitions();
+  renderAdmin();
+}
+
+async function toggleCompetition(id, value) {
+  const res = await state.db.from('competitions')
+    .update({ is_active: value === 'true' }).eq('id', id);
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast(value === 'true' ? 'Competição ativada.' : 'Competição desativada.');
+  await loadCompetitions();
+  renderAdmin();
+}
+
+async function renameCompetition(id, atual) {
+  const novo = window.prompt('Novo nome da competição:', atual);
+  if (!novo || novo.trim().length < 3) return;
+
+  const res = await state.db.from('competitions')
+    .update({ name: novo.trim(), short_name: novo.trim() }).eq('id', id);
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast('Nome atualizado.');
+  await loadCompetitions();
+  renderAdmin();
+}
+
+async function saveMedia() {
+  const key = ($('medKey').value || '').trim().toLowerCase();
+  const kind = $('medKind').value;
+  let url = ($('medUrl').value || '').trim();
+  const fileInput = $('medFile');
+  const file = fileInput && fileInput.files ? fileInput.files[0] : null;
+
+  if (!/^[a-z0-9][a-z0-9_\-]{1,63}$/.test(key)) {
+    toast('Chave inválida. Use letras minúsculas, números, hífen ou underline.');
+    return;
+  }
+
+  if (file) {
+    const ext = (file.name.split('.').pop() || 'png').toLowerCase();
+    const path = 'assets/' + key + '-' + Date.now() + '.' + ext;
+
+    const up = await state.db.storage.from('media').upload(path, file, { upsert: true });
+    if (up.error) {
+      toast('Falha no upload. Crie o bucket público "media" ou cole uma URL.');
+      return;
+    }
+
+    const pub = state.db.storage.from('media').getPublicUrl(path);
+    url = pub.data ? pub.data.publicUrl : null;
+  }
+
+  if (!url) { toast('Informe uma URL ou envie um arquivo.'); return; }
+
+  const res = await state.db.from('media_assets').upsert({
+    key_name: key,
+    image_url: url,
+    kind: kind,
+    source: file ? 'upload' : 'manual'
+  }, { onConflict: 'key_name' });
+
+  if (res.error) { toast('Erro ao salvar: ' + res.error.message); return; }
+
+  toast('Chave ' + key + ' salva.');
+  $('medKey').value = '';
+  $('medUrl').value = '';
+  if (fileInput) fileInput.value = '';
+  renderAdmin();
+}
+
+async function editMedia(id, key, urlAtual) {
+  const novo = window.prompt('Nova URL para a chave "' + key + '":', urlAtual);
+  if (!novo || !novo.trim()) return;
+
+  const res = await state.db.from('media_assets')
+    .update({ image_url: novo.trim() }).eq('id', id);
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast('URL atualizada.');
+  renderAdmin();
+}
+
+function copyKey(key) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(key).then(function () { toast('Chave copiada: ' + key); });
+  } else {
+    toast('Chave: ' + key);
+  }
+}
+
+/* ---------------- UI ---------------- */
+async function doLogin(email, pass) {
+  const guard = await state.db.rpc('admin_login_guard', { p_email: email });
+
+  if (guard.data && guard.data.blocked) {
+    const min = Math.ceil((guard.data.retry_in || 0) / 60);
+    $('authMsg').textContent = 'Muitas tentativas. Tente novamente em ' + min + ' minutos.';
+    return;
+  }
+
+  const res = await state.db.auth.signInWithPassword({ email: email, password: pass });
+
+  await state.db.rpc('admin_login_log', {
+    p_email: email,
+    p_ok: !res.error,
+    p_user_agent: navigator.userAgent
+  });
+
+  if (res.error) {
+    $('authMsg').textContent = res.error.message;
+    return;
+  }
+
+  $('authMsg').textContent = '';
+  $('loginModal').classList.remove('on');
+  await loadSession();
+  toast('Bem-vindo de volta.');
+}
+
+function bindUI() {
+  const soundBtn = $('soundBtn');
+  state.sound = localStorage.getItem('tvp:sound') === 'on';
+  soundBtn.textContent = state.sound ? '🔊' : '🔇';
+  soundBtn.setAttribute('aria-pressed', String(state.sound));
+
+  soundBtn.addEventListener('click', function () {
+    state.sound = !state.sound;
+    localStorage.setItem('tvp:sound', state.sound ? 'on' : 'off');
+    soundBtn.textContent = state.sound ? '🔊' : '🔇';
+    soundBtn.setAttribute('aria-pressed', String(state.sound));
+    if (state.sound) { getCtx(); play('tab'); }
+  });
+
+  window.addEventListener('scroll', function () {
+    $('topbar').classList.toggle('scrolled', window.scrollY > 12);
+  }, { passive: true });
+
+  $('alertClose').addEventListener('click', function () {
+    state.alertDismissed = true;
+    $('alertBar').classList.add('hidden');
+  });
+
+  $('compFilter').addEventListener('change', function () {
+    state.competitionFilter = this.value || null;
+    play('tab');
+    renderMatches();
+  });
+
+  $('enterBtn').addEventListener('click', function () {
+    play('click');
+    $('loginModal').classList.add('on');
+  });
+
+  $('adminBtn').addEventListener('click', function () { play('tab'); openAdmin(); });
+  $('adminClose').addEventListener('click', function () { $('adminDrawer').classList.remove('on'); });
+
+  $('logoutBtn').addEventListener('click', async function () {
+    play('click');
+    await state.db.auth.signOut();
+    state.user = null;
+    state.profile = null;
+    paintUser();
+    $('adminDrawer').classList.remove('on');
+    toast('Você saiu da conta.');
+  });
+
+  $('perfilLink').addEventListener('click', function (e) {
+    e.preventDefault();
+    const p = state.profile;
+    toast('Perfil: ' + ((p && p.display_name) || 'torcedor') +
+      (p && p.is_restricted ? ' (modo leitura)' : ''));
+  });
+
+  $('googleBtn').addEventListener('click', async function () {
+    const res = await state.db.auth.signInWithOAuth({
+      provider: 'google',
+      options: { redirectTo: window.location.origin + window.location.pathname }
+    });
+    if (res.error) $('authMsg').textContent = res.error.message;
+  });
+
+  $('loginForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    doLogin($('authEmail').value.trim(), $('authPass').value);
+  });
+
+  $('signupBtn').addEventListener('click', async function () {
+    const email = $('authEmail').value.trim();
+    const pass = $('authPass').value;
+
+    if (email.length < 5 || pass.length < 6) {
+      $('authMsg').textContent = 'Informe e-mail válido e senha com 6 caracteres ou mais.';
+      return;
+    }
+
+    const res = await state.db.auth.signUp({ email: email, password: pass });
+
+    if (res.error) { $('authMsg').textContent = res.error.message; return; }
+    $('authMsg').textContent = 'Conta criada. Confirme o e-mail se a verificação estiver ativa.';
+  });
+
+  $('setSave').addEventListener('click', function () {
+    const url = $('setUrl').value.trim();
+    const key = $('setKey').value.trim();
+    if (!url || !key) { toast('Preencha URL e chave.'); return; }
+    localStorage.setItem('tvp:cfg', JSON.stringify({ SUPABASE_URL: url, SUPABASE_ANON_KEY: key }));
+    location.reload();
+  });
+
+  document.addEventListener('click', function (ev) {
+    const alvo = ev.target.closest('[data-close],[data-open],[data-hero],[data-dot],[data-tab],[data-match],[data-login],[data-admtab]');
+    if (!alvo) return;
+
+    if (alvo.dataset.close) { alvo.closest('.modal').classList.remove('on'); return; }
+    if (alvo.dataset.open) { openReader(alvo.dataset.open); return; }
+
+    if (alvo.dataset.hero) {
+      state.heroIndex = (state.heroIndex + Number(alvo.dataset.hero) + state.hero.length) % state.hero.length;
+      play('tab');
+      renderHero();
+      return;
+    }
+
+    if (alvo.dataset.dot) {
+      state.heroIndex = Number(alvo.dataset.dot);
+      play('tab');
+      renderHero();
+      return;
+    }
+
+    if (alvo.dataset.tab) {
+      state.tab = alvo.dataset.tab;
+      play('tab');
+      renderLive();
+      return;
+    }
+
+    if (alvo.dataset.match) {
+      const m = state.matches.find(function (x) { return x.id === alvo.dataset.match; });
+      if (m) setActive(m);
+      return;
+    }
+
+    if (alvo.dataset.login) { $('loginModal').classList.add('on'); return; }
+
+    if (alvo.dataset.admtab) {
+      state.adminTab = alvo.dataset.admtab;
+      play('tab');
+      renderAdmin();
+      return;
+    }
+  });
+
+  document.addEventListener('click', function (ev) {
+    const evBtn = ev.target.closest('[data-ev]');
+    if (evBtn) { addEvent(evBtn.dataset.team, evBtn.dataset.ev); return; }
+
+    const clk = ev.target.closest('[data-clock]');
+    if (clk) { clockAction(clk.dataset.clock); return; }
+
+    const del = ev.target.closest('[data-del]');
+    if (del) { removeEvent(del.dataset.del); return; }
+
+    const delc = ev.target.closest('[data-delc]');
+    if (delc) { deleteComment(delc.dataset.delc); return; }
+
+    const res = ev.target.closest('[data-restrict]');
+    if (res) { toggleRestrict(res.dataset.restrict, res.dataset.val); return; }
+
+    const compToggle = ev.target.closest('[data-comp-toggle]');
+    if (compToggle) { toggleCompetition(compToggle.dataset.compToggle, compToggle.dataset.val); return; }
+
+    const compRename = ev.target.closest('[data-comp-rename]');
+    if (compRename) { renameCompetition(compRename.dataset.compRename, compRename.dataset.name); return; }
+
+    const mediaKey = ev.target.closest('[data-media-key]');
+    if (mediaKey) { copyKey(mediaKey.dataset.mediaKey); return; }
+
+    const mediaEdit = ev.target.closest('[data-media-edit]');
+    if (mediaEdit) {
+      editMedia(mediaEdit.dataset.mediaEdit, mediaEdit.dataset.key, mediaEdit.dataset.url);
+      return;
+    }
+
+    if (ev.target.id === 'compCreate') { createCompetition(); return; }
+    if (ev.target.id === 'medSave') { saveMedia(); return; }
+  });
+
+  document.addEventListener('keydown', function (ev) {
+    if (ev.key !== 'Escape') return;
+    document.querySelectorAll('.modal.on').forEach(function (m) { m.classList.remove('on'); });
+    $('adminDrawer').classList.remove('on');
+  });
+
+  document.querySelectorAll('.modal').forEach(function (m) {
+    m.addEventListener('click', function (e) { if (e.target === m) m.classList.remove('on'); });
+  });
+}
+
+/* ---------------- BOOT ---------------- */
+async function boot() {
+  bindUI();
+  fillTokens();
+
+  if (!CONFIG_OK) {
+    $('setupModal').classList.add('on');
+    $('heroStage').innerHTML = '<div class="hero-empty">Falta injetar as credenciais do banco.</div>';
+    return;
+  }
+
+  state.db = createClient(CFG.SUPABASE_URL, CFG.SUPABASE_ANON_KEY);
+
+  await loadSession();
+  await loadPosts();
+  await loadCompetitions();
+  await loadMatches();
+  await loadAlerts();
+
+  state.db.auth.onAuthStateChange(function () { loadSession(); });
+
+  subscribeRealtime();
+  setInterval(tickClock, 1000);
+}
+
+boot();
+</script>
+</body>
+</html>
