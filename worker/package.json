@@ -1,1 +1,15 @@
-
+{
+  "name": "tv-piranga-worker",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "sync": "node index.js",
+    "capture": "node index.js capture"
+  },
+  "dependencies": {
+    "playwright": "^1.49.0",
+    "playwright-core": "^1.49.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.0"
+  }
+}
