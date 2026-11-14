@@ -6,77 +6,42 @@
 <title>TV do Vale do Piranga · O canal da região</title>
 <meta name="description" content="Notícias, esporte, cultura, lazer e tecnologia do Vale do Piranga. Sede em Urucânia, Minas Gerais." />
 <meta name="theme-color" content="#0D0D11" />
+<link rel="icon" type="image/png" sizes="512x512" href="img/favicon.png" />
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+<meta property="og:title" content="TV do Vale do Piranga" />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="" />
 
-<!-- ============================================================
-     BIBLIOTECA ONLINE DE IMAGENS
-     Cole aqui os links públicos das suas imagens.
-     Funciona com qualquer hospedagem: Cloudinary, imgur, GitHub,
-     Google Drive (link direto), Supabase Storage, ImgBB, etc.
-     Deixe em branco (__) para usar os arquivos locais em img/.
-     ============================================================ -->
 <script>
-window.TVP_MEDIA = {
-  LOGO:          "https://ibb.co/wNXWj9qZ",
-  LOGO_RODAPE:   "https://ibb.co/VYYw1kRF",
-  FAVICON:       "https://ibb.co/9kDbxyxm",
-  APPLE_ICON:    "https://ibb.co/0V24wp0Y",
-  OG_IMAGE:      "https://ibb.co/VYYw1kRF",
-  HERO_FALLBACK: "__HERO_FALLBACK_URL__"
-};
-</script>
-
-<!-- ============================================================
-     CREDENCIAIS DO BANCO
-     A chave anon é pública por projeto (o RLS protege os dados).
-     NUNCA coloque a service_role aqui.
-     ============================================================ -->
-<script>
+/* ============================================================
+   CREDENCIAIS DO BANCO
+   A chave anon é pública por projeto (o RLS protege os dados).
+   NUNCA coloque a service_role aqui.
+   ============================================================ */
 window.TVP_CONFIG = {
-  SUPABASE_URL:      "https://qopfjkxpnupknsriccho.supabase.co",
-  SUPABASE_ANON_KEY: "sb_publishable_LcpHqYzfI9vtKTf2pD1i1Q_ExyGd23M",
+  SUPABASE_URL:      "__SUPABASE_URL__",
+  SUPABASE_ANON_KEY: "__SUPABASE_ANON_KEY__",
+  BUCKET:            "media",
   FOUNDATION_YEAR:   "2025",
   CITY:              "Urucânia",
   STATE:             "MG",
-  CONTACT_EMAIL:     "tvvaledopiranga@gmail.com",
-  WHATSAPP:          "31997215163"
+  CONTACT_EMAIL:     "__CONTACT_EMAIL__",
+  WHATSAPP:          "__WHATSAPP__"
 };
 </script>
 
 <style>
-@font-face{
-  font-family:"Barlow";
-  src:url("fonts/Barlow-SemiBold.woff2") format("woff2");
-  font-weight:600;font-style:normal;font-display:swap;
-}
-@font-face{
-  font-family:"Barlow";
-  src:url("fonts/Barlow-Bold.woff2") format("woff2");
-  font-weight:700;font-style:normal;font-display:swap;
-}
-@font-face{
-  font-family:"Barlow";
-  src:url("fonts/Barlow-ExtraBold.woff2") format("woff2");
-  font-weight:800;font-style:normal;font-display:swap;
-}
-@font-face{
-  font-family:"Barlow Condensed";
-  src:url("fonts/BarlowCondensed-Bold.woff2") format("woff2");
-  font-weight:700;font-style:normal;font-display:swap;
-}
-@font-face{
-  font-family:"Inter";
-  src:url("fonts/Inter-Variable.woff2") format("woff2-variations");
-  font-weight:100 900;font-style:normal;font-display:swap;
-}
+@font-face{font-family:"Barlow";src:url("fonts/Barlow-SemiBold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
+@font-face{font-family:"Barlow";src:url("fonts/Barlow-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Barlow";src:url("fonts/Barlow-ExtraBold.woff2") format("woff2");font-weight:800;font-style:normal;font-display:swap}
+@font-face{font-family:"Barlow Condensed";src:url("fonts/BarlowCondensed-Bold.woff2") format("woff2");font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:"Inter";src:url("fonts/Inter-Variable.woff2") format("woff2-variations");font-weight:100 900;font-style:normal;font-display:swap}
 
 :root{
-  /* verde alinhado ao triângulo da marca */
   --brand:#4FA82B; --brand-4:#6BC93A; --brand-d:#3C6B18;
-
   --ink:#0D0D11; --ink2:#121214; --ink3:#17171B; --ink4:#202027;
   --line:#232329; --line2:#2A2A33;
   --soft:#A9A9B4; --soft2:#8A8A97; --txt:#F4F4F7;
-
   --head:"Barlow",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
   --score:"Barlow Condensed","Barlow",ui-sans-serif,sans-serif;
@@ -99,11 +64,10 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 ::-webkit-scrollbar-track{background:#0A0A0D}
 ::-webkit-scrollbar-thumb{background:var(--line2);border-radius:99px;border:2px solid #0A0A0D}
 
-/* ============ CABEÇALHO COM DUAS FAIXAS ============ */
+/* HEADER */
 .topbar{position:sticky;top:0;z-index:60;backdrop-filter:blur(16px);
   background:rgba(13,13,17,.82);border-bottom:1px solid transparent;transition:.25s}
 .topbar.scrolled{background:rgba(9,9,12,.95);border-bottom-color:rgba(79,168,43,.28)}
-
 .nav{height:68px;display:flex;align-items:center;gap:14px}
 .brand{display:flex;align-items:center;gap:10px;flex:none;min-width:0}
 .logo{height:42px;width:auto;mix-blend-mode:screen;transition:transform .3s}
@@ -112,7 +76,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 @media(max-width:420px){.logo{height:34px}}
 .brand-txt{font-family:var(--head);font-weight:800;font-size:15px;letter-spacing:.04em;
   color:#fff;white-space:nowrap;display:none}
-
 .actions{display:flex;align-items:center;gap:8px;margin-left:auto;flex:none}
 .icon-btn{width:38px;height:38px;border-radius:11px;border:1px solid var(--line2);background:var(--ink2);
   display:grid;place-items:center;font-size:14px;color:var(--soft);transition:.2s}
@@ -132,7 +95,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .mini.danger:hover{background:rgba(239,68,68,.12)}
 .mini.on{border-color:rgba(79,168,43,.6);color:var(--brand-4);background:rgba(79,168,43,.1)}
 
-/* faixa de categorias */
 .catbar{border-top:1px solid rgba(35,35,41,.85);background:rgba(9,9,12,.55)}
 .catnav{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .catnav::-webkit-scrollbar{display:none}
@@ -144,14 +106,12 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .catnav a.live{color:#F87171}
 .catnav a.live.on{border-bottom-color:#EF4444}
 
-/* ============ ALERTA ============ */
 .alertbar{background:linear-gradient(90deg,rgba(79,168,43,.18),rgba(18,18,20,.94));
   border-bottom:1px solid rgba(79,168,43,.35)}
 .alertbar .wrap{padding:10px 18px;font-size:13px;color:#BFEB9E;display:flex;align-items:center;gap:10px}
 .alertbar .x{margin-left:auto;color:var(--soft2);font-size:15px;padding:0 4px;flex:none}
 .alertbar .x:hover{color:#fff}
 
-/* ============ HERO ============ */
 .hero{padding:20px 0 6px}
 .hero-stage{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;
   border:1px solid var(--line);background:var(--ink2)}
@@ -187,14 +147,12 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 @keyframes kenburns{from{transform:scale(1.02)}to{transform:scale(1.12)}}
 @keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
 
-/* ============ SEÇÕES ============ */
 .section{padding:42px 0}
 .sec-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;
   gap:12px;margin-bottom:18px}
 .sec-head .kick{font-size:10px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--brand-4)}
 .sec-head h2{font-size:clamp(21px,2.6vw,31px);color:#fff;margin-top:5px}
 
-/* ============ PLACAR ============ */
 .live-card{border:1px solid var(--line);border-radius:24px;overflow:hidden;
   background:linear-gradient(to bottom,var(--ink2),var(--ink));
   box-shadow:0 20px 45px -30px rgba(0,0,0,.9)}
@@ -220,8 +178,7 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 @media(min-width:700px){.score span.x{font-size:26px}}
 .historic{margin:0 14px 12px;border:1px solid rgba(79,168,43,.45);background:rgba(79,168,43,.12);
   border-radius:14px;padding:11px 15px;font-size:12px;color:#BFEB9E;line-height:1.5}
-.tabs{display:flex;gap:2px;padding:10px 10px 0;border-top:1px solid rgba(35,35,41,.7);
-  flex-wrap:wrap}
+.tabs{display:flex;gap:2px;padding:10px 10px 0;border-top:1px solid rgba(35,35,41,.7);flex-wrap:wrap}
 .tab{padding:8px 13px;border-radius:9px;font-size:10px;font-weight:700;letter-spacing:.1em;
   text-transform:uppercase;color:var(--soft2);font-family:var(--head)}
 .tab.on{color:var(--brand-4);box-shadow:inset 0 -2px 0 var(--brand-4)}
@@ -231,8 +188,7 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .ev .min{width:34px;font-family:var(--score);font-size:14px;color:var(--soft2);flex:none}
 .ev .who{flex:1;color:#E6E6EB;min-width:0}
 .ev .who b{color:#fff;font-weight:600}
-.ev .num{border-radius:6px;background:var(--line2);padding:1px 6px;font-size:10px;
-  color:var(--soft);flex:none}
+.ev .num{border-radius:6px;background:var(--line2);padding:1px 6px;font-size:10px;color:var(--soft);flex:none}
 .scorer{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:11px;
   border:1px solid rgba(35,35,41,.7);background:rgba(18,18,20,.6);font-size:13px;margin-bottom:7px}
 .scorer.hot{border-color:rgba(79,168,43,.55);background:rgba(79,168,43,.12)}
@@ -242,21 +198,19 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   margin-bottom:8px;font-family:var(--head)}
 .lineup ul{margin:0;padding:0}
 .lineup li{display:flex;gap:8px;font-size:13px;color:#C9C9D2;padding:3px 0;list-style:none}
-.lineup .sh{width:22px;text-align:right;font-family:var(--score);font-size:14px;
-  color:var(--soft2);flex:none}
+.lineup .sh{width:22px;text-align:right;font-family:var(--score);font-size:14px;color:var(--soft2);flex:none}
 .lineup .pos{margin-left:auto;font-size:10px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--soft2);flex:none}
 .empty{border:1px dashed var(--line2);border-radius:13px;padding:24px;text-align:center;
   font-size:13px;color:var(--soft2);line-height:1.6}
 
-/* ============ JOGOS ============ */
 .match-list{display:grid;gap:8px;grid-template-columns:1fr}
 @media(min-width:760px){.match-list{grid-template-columns:1fr 1fr}}
 .match-row{display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:15px;
   border:1px solid rgba(35,35,41,.85);background:var(--ink2);text-align:left;transition:.2s;width:100%}
 .match-row:hover{border-color:rgba(79,168,43,.6);transform:translateY(-1px)}
 .match-row .cr{width:26px;height:26px;border-radius:7px;background:var(--ink4);
-  display:grid;place-items:center;overflow:hidden;flex:none}
+  display:grid;place-items:center;overflow:hidden;flex:none;font-size:9px;font-weight:800;color:#C9C9D2}
 .match-row .cr img{width:80%;height:80%;object-fit:contain}
 .match-row .d{width:46px;font-family:var(--score);font-size:13px;color:var(--soft2);flex:none}
 .match-row .t{flex:1;font-family:var(--score);font-size:16px;letter-spacing:.02em;color:#fff;
@@ -265,7 +219,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   border-radius:5px;background:var(--ink4);color:#C9C9D2;flex:none}
 .match-row .st.live{background:rgba(239,68,68,.16);color:#F87171}
 
-/* ============ NOTÍCIAS ============ */
 .grid-news{display:grid;gap:15px;grid-template-columns:1fr}
 @media(min-width:640px){.grid-news{grid-template-columns:1fr 1fr}}
 @media(min-width:1000px){.grid-news{grid-template-columns:repeat(3,1fr)}}
@@ -284,7 +237,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .card-post p{margin:7px 0 0;font-size:13px;color:var(--soft);line-height:1.5}
 .card-post .meta{margin-top:11px;font-size:11px;color:var(--soft2);display:block}
 
-/* ============ RODAPÉ ============ */
 .foot{margin-top:48px;border-top:1px solid var(--line);background:#0A0A0D;padding:38px 0 24px}
 .cta{border:1px solid rgba(79,168,43,.32);border-radius:22px;padding:22px;
   background:linear-gradient(90deg,rgba(79,168,43,.16),var(--ink2) 55%,var(--ink))}
@@ -303,7 +255,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .foot-bottom{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
   display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between;font-size:12px;color:var(--soft2)}
 
-/* ============ MODAIS ============ */
 .modal{position:fixed;inset:0;z-index:90;display:none;align-items:center;justify-content:center;
   padding:16px;background:rgba(5,5,7,.8);backdrop-filter:blur(6px)}
 .modal.on{display:flex}
@@ -335,7 +286,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .cmt .dt{font-size:11px;color:var(--soft2);margin-left:6px;font-weight:400}
 .cmt .bd{font-size:13px;color:#C9C9D2;margin-top:3px;white-space:pre-wrap;word-break:break-word}
 
-/* ============ DRAWER ADMIN ============ */
 .drawer{position:fixed;inset:0 0 0 auto;width:100%;max-width:560px;z-index:95;background:var(--ink);
   border-left:1px solid var(--line);transform:translateX(100%);transition:transform .3s ease;
   display:flex;flex-direction:column}
@@ -348,8 +298,7 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   text-transform:uppercase;color:var(--soft2);white-space:nowrap;font-family:var(--head)}
 .adm-tab.on{color:var(--brand-4);box-shadow:inset 0 -2px 0 var(--brand-4)}
 .drawer-body{padding:13px;overflow:auto;flex:1}
-.panel{border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:13px;
-  background:var(--ink2)}
+.panel{border:1px solid var(--line);border-radius:16px;padding:13px;margin-bottom:13px;background:var(--ink2)}
 .panel h4{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--brand-4);
   margin-bottom:10px;font-family:var(--head)}
 .ev-btn{border:1px solid var(--line2);background:var(--ink3);border-radius:9px;padding:8px 10px;
@@ -358,10 +307,14 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 .ev-btn:active{transform:scale(.95)}
 .admin-line{display:flex;align-items:center;gap:8px;padding:8px;border-radius:9px;
   background:rgba(13,13,17,.7);font-size:12px;margin-bottom:6px}
-.admin-line .grow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
-  color:#C9C9D2}
-.thumb-sm{width:26px;height:26px;border-radius:6px;object-fit:contain;background:var(--ink4);flex:none}
+.admin-line .grow{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#C9C9D2}
+.thumb-sm{width:26px;height:26px;border-radius:6px;object-fit:contain;background:var(--ink4);
+  flex:none;display:grid;place-items:center;font-size:8px;font-weight:800;color:var(--soft2)}
 .hint{font-size:11px;color:var(--soft2);line-height:1.55;margin-top:8px}
+.file-chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line2);
+  background:var(--ink3);border-radius:8px;padding:5px 9px;font-size:11px;color:#C9C9D2;margin:0 5px 5px 0}
+.file-chip:hover{border-color:var(--brand-4);color:#fff}
+.file-chip img{width:18px;height:18px;object-fit:contain;border-radius:3px}
 
 .toast{position:fixed;bottom:20px;left:50%;transform:translate(-50%,26px);z-index:120;opacity:0;
   background:var(--ink4);border:1px solid var(--brand-d);color:#fff;padding:12px 18px;
@@ -376,15 +329,12 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 </head>
 <body id="top">
 
-<!-- ================= CABEÇALHO ================= -->
 <header class="topbar" id="topbar">
-
   <div class="wrap nav">
     <a class="brand" href="#top" aria-label="TV do Vale do Piranga">
       <img class="logo" id="logoHeader" src="img/logo.png" alt="TV do Vale do Piranga"
            width="176" height="48" decoding="async" />
     </a>
-
     <div class="actions">
       <button class="icon-btn" id="soundBtn" aria-pressed="false" aria-label="Ativar sons">🔇</button>
       <button class="btn btn-primary" id="enterBtn">Entrar</button>
@@ -395,8 +345,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
       <button class="mini hidden" id="logoutBtn">Sair</button>
     </div>
   </div>
-
-  <!-- NAVEGAÇÃO DE CATEGORIAS -->
   <div class="catbar">
     <div class="wrap catnav" id="catnav">
       <a href="#top" data-cat="inicio" class="on">Início</a>
@@ -413,7 +361,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </header>
 
-<!-- ================= BARRA DE ALERTA ================= -->
 <div id="alertBar" class="alertbar hidden">
   <div class="wrap">
     <span id="alertText"></span>
@@ -421,7 +368,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </div>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="wrap">
     <div class="hero-stage" id="heroStage"><div class="hero-empty">Carregando destaques...</div></div>
@@ -429,7 +375,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </section>
 
-<!-- ================= PLACAR ================= -->
 <section class="section" id="aovivo">
   <div class="wrap">
     <div class="sec-head">
@@ -443,7 +388,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </section>
 
-<!-- ================= JOGOS ================= -->
 <section class="section" id="esporte" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
@@ -459,7 +403,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </section>
 
-<!-- ================= COMPETIÇÕES ================= -->
 <section class="section" id="competicoes" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
@@ -472,12 +415,10 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </section>
 
-<!-- ================= NOTÍCIAS ================= -->
 <section class="section" id="noticias" style="padding-top:0">
   <div class="wrap" id="newsFeed"></div>
 </section>
 
-<!-- ================= RODAPÉ ================= -->
 <footer class="foot">
   <div class="wrap">
     <div class="cta" id="anuncie">
@@ -485,7 +426,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
       <p>Mídia regional com audiência qualificada, cobertura esportiva ao vivo e presença digital em toda a bacia do Piranga.</p>
       <a class="btn btn-primary" id="waBtn" href="#" target="_blank" rel="noreferrer">Falar com o comercial</a>
     </div>
-
     <div class="foot-cols">
       <div>
         <img class="foot-logo" id="logoFooter" src="img/logo.png" alt="TV do Vale do Piranga" loading="lazy" />
@@ -521,7 +461,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
         </ul>
       </div>
     </div>
-
     <div class="foot-bottom">
       <span>© <span id="yrFoot">2026</span> TV do Vale do Piranga. Desde <span id="yrBase">2025</span>. Todos os direitos reservados.</span>
       <span>Feito na região, para a região.</span>
@@ -529,20 +468,16 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </footer>
 
-<!-- ================= MODAL LOGIN ================= -->
 <div class="modal" id="loginModal">
   <div class="modal-card">
     <button class="modal-close close" data-close="loginModal" aria-label="Fechar">✕</button>
     <h3>Entrar no portal</h3>
     <p class="sub">Comente nas matérias e acompanhe o Placar Piranga em tempo real.</p>
-
     <button class="btn btn-ghost" id="googleBtn" style="width:100%;justify-content:center">
       Entrar com Google
     </button>
-
     <div class="muted" style="text-align:center;font-size:10px;letter-spacing:.16em;
       text-transform:uppercase;margin:15px 0">ou use e-mail</div>
-
     <form id="loginForm">
       <div class="field">
         <label for="authEmail">E-mail</label>
@@ -561,7 +496,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </div>
 
-<!-- ================= MODAL MATÉRIA ================= -->
 <div class="modal" id="readerModal">
   <div class="modal-card wide">
     <button class="modal-close close" data-close="readerModal" aria-label="Fechar">✕</button>
@@ -569,7 +503,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </div>
 
-<!-- ================= MODAL SETUP ================= -->
 <div class="modal" id="setupModal">
   <div class="modal-card">
     <h3>Conectar ao banco</h3>
@@ -590,7 +523,6 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
   </div>
 </div>
 
-<!-- ================= DRAWER ADMIN ================= -->
 <div class="drawer" id="adminDrawer">
   <div class="drawer-head">
     <h3>Painel ADM</h3>
@@ -602,38 +534,119 @@ h1,h2,h3,h4{font-family:var(--head);letter-spacing:-.015em;margin:0;font-weight:
 
 <div class="toast" id="toast"></div>
 
-<!-- ================= APLICAÇÃO ================= -->
 <script type="module">
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 /* ---------------- CONFIG ---------------- */
 const BASE = window.TVP_CONFIG || {};
-const MEDIA = window.TVP_MEDIA || {};
 let saved = {};
 try { saved = JSON.parse(localStorage.getItem('tvp:cfg') || '{}'); } catch (e) { saved = {}; }
 const CFG = Object.assign({}, BASE, saved);
 
 const isPlaceholder = (v) => !v || String(v).slice(0, 2) === '__';
 const CONFIG_OK = !isPlaceholder(CFG.SUPABASE_URL) && !isPlaceholder(CFG.SUPABASE_ANON_KEY);
-
 const CITY = isPlaceholder(CFG.CITY) ? 'Urucânia' : CFG.CITY;
 const UF = isPlaceholder(CFG.STATE) ? 'MG' : CFG.STATE;
 const FOUNDATION = isPlaceholder(CFG.FOUNDATION_YEAR) ? '2025' : String(CFG.FOUNDATION_YEAR);
+const BUCKET = isPlaceholder(CFG.BUCKET) ? 'media' : CFG.BUCKET;
 
-/* url de mídia: usa a biblioteca online se configurada, senão o arquivo local */
-function mediaUrl(key, localPath) {
-  const v = MEDIA[key];
-  return isPlaceholder(v) ? (localPath || '') : String(v);
+/* ============================================================
+   RESOLUÇÃO AUTOMÁTICA DE IMAGEM
+   Você digita só o nome do arquivo. O site monta a URL do
+   bucket e descobre a extensão sozinho.
+   ============================================================ */
+const EXTS = ['png', 'jpg', 'jpeg', 'webp', 'svg', 'gif', 'avif'];
+const probeCache = new Map();
+
+const isFullUrl = (v) => /^https?:\/\//i.test(String(v || '').trim());
+const hasExt = (v) => /\.(png|jpe?g|webp|svg|gif|avif)$/i.test(String(v || '').trim());
+
+function bucketBase() {
+  if (!CFG.SUPABASE_URL || isPlaceholder(CFG.SUPABASE_URL)) return '';
+  return String(CFG.SUPABASE_URL).replace(/\/+$/, '') +
+    '/storage/v1/object/public/' + BUCKET + '/';
 }
 
+function candidatos(nome) {
+  const n = String(nome || '').trim();
+  if (!n) return [];
+  if (isFullUrl(n)) return [n];
+  if (hasExt(n)) return [bucketBase() + n];
+  return EXTS.map((e) => bucketBase() + n + '.' + e);
+}
+
+function probe(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    img.onload = () => resolve(url);
+    img.onerror = () => resolve(null);
+    img.src = url;
+  });
+}
+
+/* resolve um nome para URL completa, usando cache */
+async function resolveAsset(nome) {
+  const n = String(nome || '').trim();
+  if (!n) return null;
+  if (isFullUrl(n)) return n;
+  if (probeCache.has(n)) return probeCache.get(n);
+
+  const mapeado = state.mediaAssets[n];
+  if (mapeado && isFullUrl(mapeado)) { probeCache.set(n, mapeado); return mapeado; }
+
+  if (!bucketBase()) { probeCache.set(n, mapeado || null); return mapeado || null; }
+
+  for (const url of candidatos(n)) {
+    const ok = await probe(url);
+    if (ok) {
+      const ext = url.split('.').pop().toLowerCase();
+      const i = EXTS.indexOf(ext);
+      if (i > 0) { EXTS.splice(i, 1); EXTS.unshift(ext); }
+      probeCache.set(n, ok);
+      return ok;
+    }
+  }
+
+  const fb = mapeado || null;
+  probeCache.set(n, fb);
+  return fb;
+}
+
+/* resolve em lote e guarda em state.resolved para uso síncrono */
+async function hydrateKeys(keys) {
+  const lista = [...new Set(keys.filter(Boolean))];
+  await Promise.all(lista.map(async (k) => {
+    const url = await resolveAsset(k);
+    if (url) state.resolved[k] = url;
+  }));
+}
+
+function assetUrl(nome) {
+  const n = String(nome || '').trim();
+  if (!n) return null;
+  if (isFullUrl(n)) return n;
+  if (state.resolved[n]) return state.resolved[n];
+  if (state.mediaAssets[n] && isFullUrl(state.mediaAssets[n])) return state.mediaAssets[n];
+  return null;
+}
+
+async function listarBucket() {
+  const res = await state.db.storage.from(BUCKET).list('', {
+    limit: 300, sortBy: { column: 'name', order: 'asc' }
+  });
+  if (res.error) return [];
+  return (res.data || []).filter((f) => f.id && !f.name.startsWith('.'));
+}
+
+/* ---------------- ESTADO ---------------- */
 const state = {
   db: null, user: null, profile: null,
   hero: [], heroIndex: 0, heroTimer: null,
   posts: [], matches: [], competitions: [], competitionFilter: null,
   active: null, events: [], scorers: [], lineups: {}, tab: 'eventos',
   openPost: null, comments: [],
-  sound: false, adminTab: 'jogo',
-  mediaAssets: {}, logoFromDb: null,
+  sound: false, adminTab: 'midias',
+  mediaAssets: {}, resolved: {}, bucketFiles: null,
   compsAdmin: [], syncSources: [], syncRuns: [], users: [], modComments: [],
   alertDismissed: false
 };
@@ -667,7 +680,7 @@ function toast(msg) {
   el.textContent = msg;
   el.classList.add('on');
   clearTimeout(toastTimer);
-  toastTimer = setTimeout(() => el.classList.remove('on'), 3200);
+  toastTimer = setTimeout(() => el.classList.remove('on'), 3400);
 }
 
 /* ---------------- SONS ---------------- */
@@ -710,19 +723,20 @@ function play(name) {
   });
 }
 
-/* ---------------- LOGO E ESCUDOS ---------------- */
-function applyLogo() {
-  const url = state.logoFromDb || mediaUrl('LOGO', 'img/logo.png');
-  const foot = state.logoFromDb || mediaUrl('LOGO_RODAPE', url);
+/* ---------------- LOGO ---------------- */
+async function applyLogo() {
+  const url = await resolveAsset('logo_principal')
+    || await resolveAsset('logo')
+    || 'img/logo.png';
 
   const head = $('logoHeader');
-  const footImg = $('logoFooter');
+  const foot = $('logoFooter');
 
   if (head) {
     head.src = url;
     head.addEventListener('error', () => {
       head.style.display = 'none';
-      if (head.nextElementSibling && head.nextElementSibling.classList.contains('brand-txt')) return;
+      if (head.parentNode.querySelector('.brand-txt')) return;
       const span = document.createElement('span');
       span.className = 'brand-txt';
       span.style.display = 'block';
@@ -731,39 +745,39 @@ function applyLogo() {
     }, { once: true });
   }
 
-  if (footImg) {
-    footImg.src = foot;
-    footImg.addEventListener('error', () => { footImg.style.display = 'none'; }, { once: true });
+  if (foot) {
+    foot.src = url;
+    foot.addEventListener('error', () => { foot.style.display = 'none'; }, { once: true });
   }
 
-  const fav = mediaUrl('FAVICON', 'img/favicon.png');
-  const apple = mediaUrl('APPLE_ICON', 'img/apple-touch-icon.png');
-  const og = mediaUrl('OG_IMAGE', '');
+  const fav = await resolveAsset('favicon');
+  if (fav) document.querySelectorAll('link[rel="icon"]').forEach((l) => { l.href = fav; });
 
-  document.querySelectorAll('link[rel="icon"]').forEach((l) => { l.href = fav; });
-  document.querySelectorAll('link[rel="apple-touch-icon"]').forEach((l) => { l.href = apple; });
+  const apple = await resolveAsset('apple_icon');
+  if (apple) document.querySelectorAll('link[rel="apple-touch-icon"]').forEach((l) => { l.href = apple; });
+
+  const og = await resolveAsset('og_image');
   if (og) {
     const m = document.querySelector('meta[property="og:image"]');
     if (m) m.setAttribute('content', og);
   }
 }
 
-/* escudo do time: link do banco, chave de mídia ou iniciais */
+/* ---------------- ESCUDOS ---------------- */
 function crestUrl(team) {
   if (!team) return null;
-  if (team.crest_url) return team.crest_url;
-  if (team.logo_key && state.mediaAssets[team.logo_key]) return state.mediaAssets[team.logo_key];
+  if (team.crest_url && isFullUrl(team.crest_url)) return team.crest_url;
+  if (team.logo_key) return assetUrl(team.logo_key);
   return null;
 }
 
-function crestBox(team, cls, sizeStyle) {
+function crestBox(team, cls, extraStyle) {
   const url = crestUrl(team);
-  const initials = esc((team && (team.short_name || String(team.name).slice(0, 3))) || '?');
-  return '<div class="' + cls + '" style="' + (sizeStyle || '') + '">' +
+  const iniciais = esc((team && (team.short_name || String(team.name).slice(0, 3))) || '?');
+  return '<div class="' + cls + '" style="' + (extraStyle || '') + '">' +
     (url
-      ? '<img src="' + esc(url) + '" alt="' + esc(team.name) + '" loading="lazy" ' +
-        'onerror="this.style.display=\'none\'">'
-      : initials) +
+      ? '<img src="' + esc(url) + '" alt="' + esc(team.name) + '" loading="lazy">'
+      : iniciais) +
   '</div>';
 }
 
@@ -771,26 +785,20 @@ async function loadMediaAssets() {
   const res = await state.db.from('media_assets').select('key_name, image_url');
   state.mediaAssets = {};
   (res.data || []).forEach((a) => { state.mediaAssets[a.key_name] = a.image_url; });
-
-  if (state.mediaAssets.logo_principal) state.logoFromDb = state.mediaAssets.logo_principal;
-  applyLogo();
 }
 
-/* ---------------- TOKENS DO RODAPÉ ---------------- */
+/* ---------------- TOKENS ---------------- */
 function fillTokens() {
   $('yrBase').textContent = FOUNDATION;
   $('yrFoot').textContent = String(new Date().getFullYear());
   $('footCity').textContent = 'Sede: ' + CITY + ', ' + UF;
-
   if (!isPlaceholder(CFG.CONTACT_EMAIL)) $('footEmail').textContent = CFG.CONTACT_EMAIL;
-
   if (!isPlaceholder(CFG.WHATSAPP)) {
     const wa = String(CFG.WHATSAPP).replace(/\D/g, '');
     $('footWa').textContent = 'WhatsApp: ' + CFG.WHATSAPP;
     $('waBtn').href = 'https://wa.me/' + wa + '?text=' +
       encodeURIComponent('Quero patrocinar a TV do Vale do Piranga');
   }
-
   document.title = 'TV do Vale do Piranga · ' + CITY + '/' + UF;
 }
 
@@ -806,7 +814,7 @@ function renderHero() {
   }
 
   const p = state.hero[state.heroIndex % state.hero.length];
-  const cover = p.cover_url || mediaUrl('HERO_FALLBACK', '');
+  const cover = p.cover_url || assetUrl('capa_padrao');
 
   stage.innerHTML =
     (cover ? '<img class="hero-img" src="' + esc(cover) + '" alt="' + esc(p.title) + '">' : '') +
@@ -879,18 +887,18 @@ function paneEvents() {
 
 function paneLineups() {
   const m = state.active;
-  const sides = [m.home, m.away];
-  return '<div style="display:grid;gap:20px" class="lineup">' + sides.map((t) => {
-    const list = state.lineups[t.id] || [];
-    const items = list.length
-      ? list.map((p) =>
-          '<li><span class="sh">' + (p.shirt_number || '-') + '</span>' +
-          '<span>' + esc(p.full_name) + '</span>' +
-          (p.position ? '<span class="pos">' + esc(p.position) + '</span>' : '') + '</li>'
-        ).join('')
-      : '<li class="muted">Escalação não divulgada.</li>';
-    return '<div><h4>' + esc(t.name) + '</h4><ul>' + items + '</ul></div>';
-  }).join('') + '</div>';
+  return '<div style="display:grid;gap:20px" class="lineup">' +
+    [m.home, m.away].map((t) => {
+      const list = state.lineups[t.id] || [];
+      const items = list.length
+        ? list.map((p) =>
+            '<li><span class="sh">' + (p.shirt_number || '-') + '</span>' +
+            '<span>' + esc(p.full_name) + '</span>' +
+            (p.position ? '<span class="pos">' + esc(p.position) + '</span>' : '') + '</li>'
+          ).join('')
+        : '<li class="muted">Escalação não divulgada.</li>';
+      return '<div><h4>' + esc(t.name) + '</h4><ul>' + items + '</ul></div>';
+    }).join('') + '</div>';
 }
 
 function paneScorers() {
@@ -1009,6 +1017,8 @@ async function loadCompetitions() {
 
   state.competitions = res.data || [];
 
+  await hydrateKeys(state.competitions.map((c) => c.logo_key));
+
   const sel = $('compFilter');
   sel.innerHTML = '<option value="">Todas as competições</option>' +
     state.competitions.map((c) =>
@@ -1027,14 +1037,14 @@ function renderCompGrid() {
   }
 
   box.innerHTML = state.competitions.map((c) => {
-    const logo = c.logo_url || (c.logo_key ? state.mediaAssets[c.logo_key] : null);
+    const logo = (c.logo_key ? assetUrl(c.logo_key) : null) ||
+                 (isFullUrl(c.logo_url) ? c.logo_url : null);
     const liga = c.league ? c.league.short_name : '';
     return '<button class="card-post" data-comp="' + esc(c.id) + '">' +
       '<span class="thumb" style="aspect-ratio:16/9">' +
         (logo
           ? '<img src="' + esc(logo) + '" alt="' + esc(c.name) + '" ' +
-            'style="object-fit:contain;padding:22px" loading="lazy" ' +
-            'onerror="this.style.display=\'none\'">'
+            'style="object-fit:contain;padding:22px" loading="lazy">'
           : '') +
         (liga ? '<span class="cat">' + esc(liga) + '</span>' : '') +
       '</span>' +
@@ -1195,9 +1205,7 @@ function renderComments() {
     '<div style="margin:13px 0">' + composer + '</div>' + list;
 
   const ta = $('cmtBody');
-  if (ta) ta.addEventListener('input', () => {
-    $('cmtCount').textContent = ta.value.length;
-  });
+  if (ta) ta.addEventListener('input', () => { $('cmtCount').textContent = ta.value.length; });
 
   const form = $('cmtForm');
   if (form) {
@@ -1210,7 +1218,6 @@ function renderComments() {
         .insert({ post_id: p.id, author_id: state.user.id, body: body });
 
       if (res.error) { toast('Não foi possível publicar. Tente novamente.'); return; }
-
       play('click');
       $('cmtBody').value = '';
       loadComments(p.id);
@@ -1278,7 +1285,6 @@ async function loadPosts() {
     .limit(40);
 
   state.posts = res.data || [];
-
   const feat = state.posts.filter((p) => p.is_featured);
   state.hero = (feat.length ? feat : state.posts).slice(0, 5);
   state.heroIndex = 0;
@@ -1302,6 +1308,14 @@ async function loadMatches() {
 
   state.matches = res.data || [];
 
+  const keys = [];
+  state.matches.forEach((m) => {
+    if (m.home && m.home.logo_key) keys.push(m.home.logo_key);
+    if (m.away && m.away.logo_key) keys.push(m.away.logo_key);
+    if (m.competition && m.competition.logo_key) keys.push(m.competition.logo_key);
+  });
+  await hydrateKeys(keys);
+
   const live = state.matches.find((m) => m.status === 'live' || m.status === 'halftime');
   const chosen = live || state.matches[0] || null;
 
@@ -1315,7 +1329,6 @@ async function loadMatches() {
 
 async function setActive(m) {
   state.active = m || null;
-
   if (!m) { renderMatches(); renderLive(); return; }
 
   const ids = [m.home_team_id, m.away_team_id];
@@ -1371,7 +1384,7 @@ function subscribeRealtime() {
       if (state.adminTab === 'competicoes') renderAdmin();
     })
     .on('postgres_changes', { event: '*', schema: 'public', table: 'media_assets' }, () => {
-      loadMediaAssets();
+      loadMediaAssets().then(() => { applyLogo(); });
       if (state.adminTab === 'midias') renderAdmin();
     })
     .on('postgres_changes', { event: '*', schema: 'public', table: 'sync_runs' }, () => {
@@ -1382,11 +1395,11 @@ function subscribeRealtime() {
 
 /* ---------------- PAINEL ADM ---------------- */
 const ADM_TABS = [
-  { key: 'jogo', label: 'Partida' },
-  { key: 'competicoes', label: 'Competições' },
-  { key: 'midias', label: 'Mídias' },
+  { key: 'midias', label: 'Imagens' },
   { key: 'times', label: 'Times' },
-  { key: 'sync', label: 'Sync LDU' },
+  { key: 'competicoes', label: 'Competições' },
+  { key: 'jogo', label: 'Partida' },
+  { key: 'sync', label: 'Sync' },
   { key: 'moderacao', label: 'Moderação' }
 ];
 
@@ -1410,12 +1423,202 @@ async function renderAdmin() {
   renderAdminTabs();
   const box = $('adminBody');
 
-  if (state.adminTab === 'jogo') return renderAdminMatch(box);
-  if (state.adminTab === 'competicoes') return renderAdminCompetitions(box);
   if (state.adminTab === 'midias') return renderAdminMedia(box);
   if (state.adminTab === 'times') return renderAdminTeams(box);
+  if (state.adminTab === 'competicoes') return renderAdminCompetitions(box);
+  if (state.adminTab === 'jogo') return renderAdminMatch(box);
   if (state.adminTab === 'sync') return renderAdminSync(box);
   return renderAdminModeration(box);
+}
+
+/* ----- ADM: imagens (o coração do sistema) ----- */
+async function renderAdminMedia(box) {
+  box.innerHTML = '<div class="panel"><h4>Lendo o bucket...</h4>' +
+    '<div class="empty">Carregando arquivos.</div></div>';
+
+  const arquivos = await listarBucket();
+  state.bucketFiles = arquivos;
+
+  const res = await state.db.from('media_assets')
+    .select('id, key_name, image_url, kind')
+    .order('key_name');
+  const mapeadas = res.data || [];
+
+  const chips = arquivos.length
+    ? arquivos.map((f) =>
+        '<button class="file-chip" data-pick="' + esc(f.name) + '">' +
+          '<img src="' + esc(bucketBase() + f.name) + '" alt="" ' +
+          'onerror="this.style.visibility=\'hidden\'">' +
+          esc(f.name) +
+        '</button>'
+      ).join('')
+    : '<div class="empty">Nenhum arquivo encontrado no bucket <b>' + esc(BUCKET) +
+      '</b>. Suba as imagens em Storage no Supabase e recarregue aqui.</div>';
+
+  const linhas = mapeadas.map((a) =>
+    '<div class="admin-line">' +
+      '<img class="thumb-sm" src="' + esc(a.image_url) + '" alt="">' +
+      '<span class="grow"><b>' + esc(a.key_name) + '</b><br>' +
+        '<span style="font-size:10px;color:var(--soft2)">' + esc(a.kind) + '</span></span>' +
+      '<button class="mini" data-copy="' + esc(a.key_name) + '">copiar</button>' +
+      '<button class="mini danger" data-media-del="' + esc(a.id) + '">×</button>' +
+    '</div>'
+  ).join('') || '<div class="empty">Nenhuma chave cadastrada ainda.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Arquivos no bucket</h4>' +
+      '<div style="margin-bottom:6px">' + chips + '</div>' +
+      '<p class="hint">Clique em um arquivo para cadastrar a chave dele. ' +
+      'A chave é o nome que você digita depois nos times e competições.</p>' +
+      '<button class="mini" data-refresh-bucket="1">recarregar lista</button>' +
+    '</div>' +
+    '<div class="panel">' +
+      '<h4>Cadastrar chave manualmente</h4>' +
+      '<div class="field"><label>Nome do arquivo no bucket</label>' +
+        '<input class="input" id="medFile" placeholder="escudo-pontenovense" /></div>' +
+      '<div class="field"><label>Chave (como vai usar no site)</label>' +
+        '<input class="input" id="medKey" placeholder="pontenovense" /></div>' +
+      '<div class="field"><label>Tipo</label>' +
+        '<select class="input" id="medKind">' +
+          '<option value="crest">escudo de time</option>' +
+          '<option value="logo">logo</option>' +
+          '<option value="banner">banner</option>' +
+          '<option value="photo">foto</option>' +
+        '</select></div>' +
+      '<button class="btn btn-primary" id="medSave" ' +
+        'style="width:100%;justify-content:center">Salvar chave</button>' +
+      '<p class="hint">Deixe a chave vazia para usar o próprio nome do arquivo. ' +
+        'Você só precisa do nome, sem link e sem extensão.</p>' +
+    '</div>' +
+    '<div class="panel"><h4>Chaves cadastradas (' + mapeadas.length + ')</h4>' + linhas + '</div>' +
+    '<div class="panel">' +
+      '<h4>Chaves especiais</h4>' +
+      '<p class="hint">' +
+        '<b>logo_principal</b> troca a logo do cabeçalho em todo o site.<br>' +
+        '<b>logo</b> é o segundo nome tentado para a logo.<br>' +
+        '<b>favicon</b> e <b>apple_icon</b> trocam os ícones.<br>' +
+        '<b>og_image</b> troca a imagem de compartilhamento.<br>' +
+        '<b>capa_padrao</b> é a capa do hero quando a matéria não tem imagem.' +
+      '</p>' +
+      '<p class="hint">Endereço do bucket: <b>' + esc(bucketBase() || 'configure o SUPABASE_URL') +
+      '</b></p>' +
+    '</div>';
+}
+
+/* ----- ADM: times ----- */
+async function renderAdminTeams(box) {
+  box.innerHTML = '<div class="panel"><div class="empty">Carregando times...</div></div>';
+
+  const res = await state.db.from('teams')
+    .select('id, name, short_name, crest_url, logo_key')
+    .order('name');
+
+  const times = res.data || [];
+  await hydrateKeys(times.map((t) => t.logo_key));
+
+  const arquivos = state.bucketFiles || await listarBucket();
+  state.bucketFiles = arquivos;
+
+  const opcoes = arquivos.map((f) => {
+    const nome = f.name.replace(/\.[^.]+$/, '');
+    return '<option value="' + esc(nome) + '">' + esc(f.name) + '</option>';
+  }).join('');
+
+  const linhas = times.map((t) =>
+    '<div class="admin-line">' +
+      crestBox(t, 'thumb-sm') +
+      '<span class="grow"><b>' + esc(t.short_name || t.name) + '</b><br>' +
+        '<span style="font-size:10px;color:var(--soft2)">' +
+        esc(t.logo_key || 'sem escudo') + '</span></span>' +
+      '<button class="mini" data-team-logo="' + esc(t.id) + '" data-key="' +
+        esc(t.logo_key || '') + '">definir</button>' +
+      (t.logo_key ? '<button class="mini danger" data-team-clear="' + esc(t.id) +
+        '">×</button>' : '') +
+    '</div>'
+  ).join('') || '<div class="empty">Nenhum time cadastrado.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Escudos</h4>' +
+      '<p class="hint">Clique em <b>definir</b> e digite o nome do arquivo que está no bucket, ' +
+      'sem extensão. Exemplo: <b>pontenovense</b>. O site encontra a imagem sozinho.</p>' +
+      '<div style="margin:8px 0">' +
+        (arquivos.length
+          ? '<select class="input" id="teamPick" style="margin-bottom:8px">' +
+            '<option value="">— escolher arquivo do bucket —</option>' + opcoes + '</select>' +
+            '<select class="input" id="teamTarget">' +
+            '<option value="">— escolher time —</option>' +
+            times.map((t) => '<option value="' + esc(t.id) + '">' + esc(t.name) +
+              '</option>').join('') +
+            '</select>' +
+            '<button class="btn btn-primary" id="teamApply" ' +
+            'style="width:100%;justify-content:center;margin-top:8px">Aplicar escudo</button>'
+          : '<div class="empty">Suba imagens no bucket para habilitar esta lista.</div>') +
+      '</div>' +
+    '</div>' +
+    '<div class="panel"><h4>Times (' + times.length + ')</h4>' + linhas + '</div>';
+}
+
+/* ----- ADM: competições ----- */
+async function renderAdminCompetitions(box) {
+  const res = await state.db.from('competitions')
+    .select('id, slug, name, short_name, season, is_active, logo_url, logo_key, league:leagues(short_name)')
+    .order('name');
+
+  state.compsAdmin = res.data || [];
+  await hydrateKeys(state.compsAdmin.map((c) => c.logo_key));
+
+  const arquivos = state.bucketFiles || await listarBucket();
+  state.bucketFiles = arquivos;
+
+  const linhas = state.compsAdmin.map((c) => {
+    const liga = c.league ? c.league.short_name : '—';
+    const logo = (c.logo_key ? assetUrl(c.logo_key) : null) ||
+                 (isFullUrl(c.logo_url) ? c.logo_url : null);
+    return '<div class="admin-line">' +
+      (logo
+        ? '<img class="thumb-sm" src="' + esc(logo) + '" alt="">'
+        : '<span class="thumb-sm">—</span>') +
+      '<span class="grow"><b>' + esc(c.name) + '</b><br>' +
+        '<span style="font-size:10px;color:var(--soft2)">' + liga + ' · ' +
+        esc(c.logo_key || 'sem logo') + '</span></span>' +
+      '<button class="mini ' + (c.is_active ? 'on' : '') + '" data-comp-toggle="' +
+        esc(c.id) + '" data-val="' + (c.is_active ? 'false' : 'true') + '">' +
+        (c.is_active ? 'ativa' : 'inativa') + '</button>' +
+      '<button class="mini" data-comp-key="' + esc(c.id) + '" data-key="' +
+        esc(c.logo_key || '') + '">logo</button>' +
+      '<button class="mini" data-comp-rename="' + esc(c.id) + '" data-name="' +
+        esc(c.name) + '">nome</button>' +
+    '</div>';
+  }).join('') || '<div class="empty">Nenhuma competição cadastrada.</div>';
+
+  box.innerHTML =
+    '<div class="panel">' +
+      '<h4>Nova competição</h4>' +
+      '<div class="field"><label>Nome</label>' +
+        '<input class="input" id="compName" placeholder="Copa do Vale 2026" /></div>' +
+      '<div class="field"><label>Sigla</label>' +
+        '<input class="input" id="compShort" placeholder="Copa do Vale" /></div>' +
+      '<div class="field"><label>Liga</label>' +
+        '<select class="input" id="compLeague">' +
+          '<option value="">Sem liga</option>' +
+          '<option value="ldu">LDU</option>' +
+          '<option value="lmd">LMD</option>' +
+        '</select></div>' +
+      '<div class="field"><label>Temporada</label>' +
+        '<input class="input" id="compSeason" value="2026" /></div>' +
+      '<button class="btn btn-primary" id="compCreate" ' +
+        'style="width:100%;justify-content:center">Criar competição</button>' +
+    '</div>' +
+    '<div class="panel"><h4>Cadastradas</h4>' + linhas + '</div>' +
+    '<div class="panel"><h4>Logos</h4>' +
+      '<p class="hint">O botão <b>logo</b> pede o nome do arquivo no bucket, sem extensão. ' +
+      'Arquivos disponíveis: ' +
+      (arquivos.length
+        ? arquivos.map((f) => '<b>' + esc(f.name.replace(/\.[^.]+$/, '')) + '</b>').join(', ')
+        : 'nenhum') + '.</p>' +
+    '</div>';
 }
 
 /* ----- ADM: partida ----- */
@@ -1489,136 +1692,6 @@ function renderAdminMatch(box) {
     '<div class="panel"><h4>Linha do tempo</h4>' + timeline + '</div>';
 }
 
-/* ----- ADM: competições ----- */
-async function renderAdminCompetitions(box) {
-  const res = await state.db.from('competitions')
-    .select('id, slug, name, short_name, season, is_active, logo_url, logo_key, league:leagues(short_name)')
-    .order('name');
-
-  state.compsAdmin = res.data || [];
-
-  const rows = state.compsAdmin.map((c) => {
-    const liga = c.league ? c.league.short_name : '—';
-    const logo = c.logo_url || (c.logo_key ? state.mediaAssets[c.logo_key] : null);
-    return '<div class="admin-line">' +
-      (logo
-        ? '<img class="thumb-sm" src="' + esc(logo) + '" alt="">'
-        : '<span class="thumb-sm"></span>') +
-      '<span class="grow"><b>' + esc(c.name) + '</b><br>' +
-        '<span style="font-size:10px;color:var(--soft2)">' + liga + ' · ' +
-        esc(c.slug) + '</span></span>' +
-      '<button class="mini ' + (c.is_active ? 'on' : '') + '" data-comp-toggle="' +
-        esc(c.id) + '" data-val="' + (c.is_active ? 'false' : 'true') + '">' +
-        (c.is_active ? 'ativa' : 'inativa') + '</button>' +
-      '<button class="mini" data-comp-key="' + esc(c.id) + '" data-key="' +
-        esc(c.logo_key || '') + '">logo</button>' +
-      '<button class="mini" data-comp-rename="' + esc(c.id) + '" data-name="' +
-        esc(c.name) + '">nome</button>' +
-    '</div>';
-  }).join('') || '<div class="empty">Nenhuma competição cadastrada.</div>';
-
-  box.innerHTML =
-    '<div class="panel">' +
-      '<h4>Nova competição</h4>' +
-      '<div class="field"><label>Nome</label>' +
-        '<input class="input" id="compName" placeholder="Copa do Vale 2026" /></div>' +
-      '<div class="field"><label>Sigla</label>' +
-        '<input class="input" id="compShort" placeholder="Copa do Vale" /></div>' +
-      '<div class="field"><label>Liga</label>' +
-        '<select class="input" id="compLeague">' +
-          '<option value="">Sem liga</option>' +
-          '<option value="ldu">LDU</option>' +
-          '<option value="lmd">LMD</option>' +
-        '</select></div>' +
-      '<div class="field"><label>Temporada</label>' +
-        '<input class="input" id="compSeason" value="2026" /></div>' +
-      '<button class="btn btn-primary" id="compCreate" ' +
-        'style="width:100%;justify-content:center">Criar competição</button>' +
-      '<p class="hint">O slug é gerado a partir do nome e não muda depois.</p>' +
-    '</div>' +
-    '<div class="panel"><h4>Cadastradas</h4>' + rows + '</div>' +
-    '<div class="panel"><h4>Logos</h4>' +
-      '<p class="hint">O botão <b>logo</b> pede a chave de uma imagem já cadastrada na aba ' +
-      'Mídias. Exemplo: <b>logo_copa_vale</b>. O banco resolve o link e o site renderiza.</p>' +
-    '</div>';
-}
-
-/* ----- ADM: mídias ----- */
-async function renderAdminMedia(box) {
-  const res = await state.db.from('media_assets')
-    .select('id, key_name, image_url, kind, source')
-    .order('key_name');
-
-  const assets = res.data || [];
-
-  const rows = assets.map((a) =>
-    '<div class="admin-line">' +
-      '<img class="thumb-sm" src="' + esc(a.image_url) + '" alt="">' +
-      '<span class="grow"><b>' + esc(a.key_name) + '</b><br>' +
-        '<span style="font-size:10px;color:var(--soft2)">' + esc(a.kind) + ' · ' +
-        esc(a.source) + '</span></span>' +
-      '<button class="mini" data-copy="' + esc(a.key_name) + '">copiar</button>' +
-      '<button class="mini" data-media-edit="' + esc(a.id) + '" data-key="' +
-        esc(a.key_name) + '" data-url="' + esc(a.image_url) + '">url</button>' +
-    '</div>'
-  ).join('') || '<div class="empty">Nenhuma mídia cadastrada.</div>';
-
-  box.innerHTML =
-    '<div class="panel">' +
-      '<h4>Nova imagem por link</h4>' +
-      '<div class="field"><label>Chave (ex: logo1)</label>' +
-        '<input class="input" id="medKey" placeholder="logo1" /></div>' +
-      '<div class="field"><label>Link público da imagem</label>' +
-        '<input class="input" id="medUrl" placeholder="https://..." /></div>' +
-      '<div class="field"><label>Tipo</label>' +
-        '<select class="input" id="medKind">' +
-          '<option value="crest">crest (escudo de time)</option>' +
-          '<option value="logo">logo</option>' +
-          '<option value="banner">banner</option>' +
-          '<option value="photo">photo</option>' +
-        '</select></div>' +
-      '<button class="btn btn-primary" id="medSave" ' +
-        'style="width:100%;justify-content:center">Salvar chave</button>' +
-      '<p class="hint">Cole o link direto da imagem hospedada na sua biblioteca online. ' +
-        'Depois use a chave nos campos de logo de times e competições.</p>' +
-    '</div>' +
-    '<div class="panel"><h4>Chaves cadastradas (' + assets.length + ')</h4>' + rows + '</div>' +
-    '<div class="panel">' +
-      '<h4>Chaves reservadas</h4>' +
-      '<p class="hint"><b>logo_principal</b> troca a logo do cabeçalho em todo o site. ' +
-      'Cadastre essa chave com o link da sua logo para não depender do arquivo local.</p>' +
-    '</div>';
-}
-
-/* ----- ADM: times ----- */
-async function renderAdminTeams(box) {
-  const res = await state.db.from('teams')
-    .select('id, name, short_name, city, crest_url, logo_key')
-    .order('name');
-
-  const teams = res.data || [];
-
-  const rows = teams.map((t) =>
-    '<div class="admin-line">' +
-      crestBox(t, 'thumb-sm') +
-      '<span class="grow"><b>' + esc(t.short_name || t.name) + '</b><br>' +
-        '<span style="font-size:10px;color:var(--soft2)">' + esc(t.name) + '</span></span>' +
-      '<button class="mini" data-team-logo="' + esc(t.id) + '" data-key="' +
-        esc(t.logo_key || '') + '" data-url="' + esc(t.crest_url || '') + '">logo</button>' +
-    '</div>'
-  ).join('') || '<div class="empty">Nenhum time cadastrado.</div>';
-
-  box.innerHTML =
-    '<div class="panel"><h4>Escudos dos times (' + teams.length + ')</h4>' + rows + '</div>' +
-    '<div class="panel">' +
-      '<h4>Como funciona</h4>' +
-      '<p class="hint">O botão <b>logo</b> aceita duas formas: um link direto da imagem, ' +
-      'ou o nome de uma chave cadastrada na aba Mídias. Se você informar apenas a chave, ' +
-      'o banco resolve o link automaticamente. Sem nenhum dos dois, o site mostra as ' +
-      'iniciais do time.</p>' +
-    '</div>';
-}
-
 /* ----- ADM: sync ----- */
 async function renderAdminSync(box) {
   const [srcRes, runRes] = await Promise.all([
@@ -1676,8 +1749,8 @@ async function renderAdminSync(box) {
     '<div class="panel"><h4>Últimas execuções</h4>' + runs + '</div>' +
     '<div class="panel"><h4>Disparo manual</h4>' +
       '<p class="hint">A sincronização roda por worker externo, fora do navegador. ' +
-      'Para rodar agora, execute <b>node worker/index.js</b> no servidor ou no GitHub Actions. ' +
-      'O painel atualiza sozinho.</p></div>';
+      'Para rodar agora, execute <b>node worker/index.js</b> no servidor ou no GitHub Actions.</p>' +
+    '</div>';
 }
 
 /* ----- ADM: moderação ----- */
@@ -1715,9 +1788,7 @@ async function renderAdminModeration(box) {
 
   box.innerHTML =
     '<div class="panel"><h4>Comentários recentes</h4>' + cmts + '</div>' +
-    '<div class="panel"><h4>Usuários</h4>' + users +
-      '<p class="hint">Bloquear aplica o modo leitura: a pessoa continua lendo tudo, ' +
-      'mas o banco recusa novos comentários, mesmo chamando a API direto.</p></div>';
+    '<div class="panel"><h4>Usuários</h4>' + users + '</div>';
 }
 
 /* ---------------- AÇÕES ---------------- */
@@ -1765,7 +1836,6 @@ async function removeEvent(id) {
 async function deleteComment(id) {
   const res = await state.db.from('comments')
     .update({ deleted_at: new Date().toISOString() }).eq('id', id);
-
   if (res.error) { toast('Erro ao apagar.'); return; }
   toast('Comentário apagado.');
   if (state.adminTab === 'moderacao') renderAdmin();
@@ -1778,7 +1848,6 @@ async function toggleRestrict(userId, value) {
     p_restricted: value === 'true',
     p_reason: value === 'true' ? 'Moderação do portal' : null
   });
-
   if (res.error) { toast('Erro: ' + res.error.message); return; }
   toast(value === 'true' ? 'Usuário em modo leitura.' : 'Usuário liberado.');
   renderAdmin();
@@ -1792,9 +1861,9 @@ async function createCompetition() {
 
   if (name.length < 3) { toast('Informe o nome da competição.'); return; }
 
-  const slug = name.toLowerCase()
-    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+  const slug = name.toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '').replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-|-$/g, '');
 
   let leagueId = null;
   if (leagueSlug) {
@@ -1816,7 +1885,6 @@ async function createCompetition() {
 async function toggleCompetition(id, value) {
   const res = await state.db.from('competitions')
     .update({ is_active: value === 'true' }).eq('id', id);
-
   if (res.error) { toast('Erro: ' + res.error.message); return; }
   toast(value === 'true' ? 'Competição ativada.' : 'Competição desativada.');
   await loadCompetitions();
@@ -1826,97 +1894,145 @@ async function toggleCompetition(id, value) {
 async function renameCompetition(id, atual) {
   const novo = window.prompt('Novo nome da competição:', atual);
   if (!novo || novo.trim().length < 3) return;
-
   const res = await state.db.from('competitions')
     .update({ name: novo.trim(), short_name: novo.trim() }).eq('id', id);
-
   if (res.error) { toast('Erro: ' + res.error.message); return; }
   toast('Nome atualizado.');
   await loadCompetitions();
   renderAdmin();
 }
 
-async function setCompLogo(id, chaveAtual) {
-  const key = window.prompt(
-    'Chave da imagem para esta competição (ex: logo_copa_vale).\n' +
-    'Deixe vazio para remover.', chaveAtual || ''
+async function setCompLogo(id, atual) {
+  const nome = window.prompt(
+    'Nome do arquivo no bucket, sem extensão.\nExemplo: copa-vale\n\n' +
+    'Deixe vazio para remover.', atual || ''
   );
-  if (key === null) return;
+  if (nome === null) return;
 
-  const k = key.trim().toLowerCase();
+  const k = nome.trim().replace(/\.[^.]+$/, '').toLowerCase();
   const res = await state.db.from('competitions')
-    .update({ logo_key: k || null }).eq('id', id);
+    .update({ logo_key: k || null, logo_url: null }).eq('id', id);
 
   if (res.error) { toast('Erro: ' + res.error.message); return; }
-  toast(k ? 'Chave ' + k + ' aplicada.' : 'Logo removida.');
+
+  if (k) {
+    probeCache.delete(k);
+    const url = await resolveAsset(k);
+    if (!url) toast('Atenção: não achei "' + k + '" no bucket. Confira o nome.');
+    else toast('Logo aplicada.');
+  } else {
+    toast('Logo removida.');
+  }
+
   await loadCompetitions();
   renderAdmin();
 }
 
-async function setTeamLogo(id, chaveAtual, urlAtual) {
-  const entrada = window.prompt(
-    'Cole o LINK da imagem do escudo.\n' +
-    'Ou digite apenas o nome de uma chave de mídia (ex: logo1).\n' +
-    'Deixe vazio para remover.', urlAtual || chaveAtual || ''
+async function setTeamLogo(id, atual) {
+  const nome = window.prompt(
+    'Nome do arquivo do escudo no bucket, sem extensão.\nExemplo: pontenovense\n\n' +
+    'Deixe vazio para remover.', atual || ''
   );
-  if (entrada === null) return;
+  if (nome === null) return;
 
-  const v = entrada.trim();
-  const patch = { crest_url: null, logo_key: null };
+  const k = nome.trim().replace(/\.[^.]+$/, '').toLowerCase();
+  const res = await state.db.from('teams')
+    .update({ logo_key: k || null, crest_url: null }).eq('id', id);
 
-  if (v) {
-    if (/^https?:\/\//i.test(v)) patch.crest_url = v;
-    else patch.logo_key = v.toLowerCase();
-  }
-
-  const res = await state.db.from('teams').update(patch).eq('id', id);
   if (res.error) { toast('Erro: ' + res.error.message); return; }
 
-  toast(v ? 'Escudo atualizado.' : 'Escudo removido.');
+  if (k) {
+    probeCache.delete(k);
+    const url = await resolveAsset(k);
+    if (!url) toast('Atenção: não achei "' + k + '" no bucket. Confira o nome.');
+    else toast('Escudo aplicado.');
+  } else {
+    toast('Escudo removido.');
+  }
+
+  await loadMatches();
+  renderAdmin();
+}
+
+async function clearTeamLogo(id) {
+  const res = await state.db.from('teams').update({ logo_key: null, crest_url: null }).eq('id', id);
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast('Escudo removido.');
+  await loadMatches();
+  renderAdmin();
+}
+
+async function applyTeamFromSelect() {
+  const arquivo = $('teamPick').value;
+  const timeId = $('teamTarget').value;
+  if (!arquivo || !timeId) { toast('Escolha o arquivo e o time.'); return; }
+
+  const k = arquivo.replace(/\.[^.]+$/, '').toLowerCase();
+  const res = await state.db.from('teams')
+    .update({ logo_key: k, crest_url: null }).eq('id', timeId);
+
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  probeCache.delete(k);
+  toast('Escudo aplicado.');
   await loadMatches();
   renderAdmin();
 }
 
 async function saveMedia() {
-  const key = ($('medKey').value || '').trim().toLowerCase();
+  const arquivo = ($('medFile').value || '').trim();
+  let chave = ($('medKey').value || '').trim().toLowerCase();
   const kind = $('medKind').value;
-  const url = ($('medUrl').value || '').trim();
 
-  if (!/^[a-z0-9][a-z0-9_\-]{1,63}$/.test(key)) {
+  if (!arquivo && !chave) { toast('Informe o nome do arquivo.'); return; }
+  if (!chave) chave = arquivo.replace(/\.[^.]+$/, '').toLowerCase();
+
+  if (!/^[a-z0-9][a-z0-9_\-]{1,63}$/.test(chave)) {
     toast('Chave inválida. Use minúsculas, números, hífen ou underline.');
     return;
   }
 
-  if (!/^https?:\/\//i.test(url)) {
-    toast('Informe o link completo, começando com https://');
+  const entrada = arquivo || chave;
+  probeCache.delete(entrada);
+  probeCache.delete(chave);
+
+  const url = await resolveAsset(entrada);
+  if (!url) {
+    toast('Não achei "' + entrada + '" no bucket. Confira o nome do arquivo.');
     return;
   }
 
   const res = await state.db.from('media_assets').upsert({
-    key_name: key, image_url: url, kind: kind, source: 'manual'
+    key_name: chave, image_url: url, kind: kind, source: 'bucket'
   }, { onConflict: 'key_name' });
 
   if (res.error) { toast('Erro ao salvar: ' + res.error.message); return; }
 
-  toast('Chave ' + key + ' salva.');
+  toast('Chave "' + chave + '" salva.');
+  $('medFile').value = '';
   $('medKey').value = '';
-  $('medUrl').value = '';
 
+  await loadMediaAssets();
+  await applyLogo();
+  renderAdmin();
+}
+
+async function deleteMedia(id) {
+  const res = await state.db.from('media_assets').delete().eq('id', id);
+  if (res.error) { toast('Erro: ' + res.error.message); return; }
+  toast('Chave removida.');
   await loadMediaAssets();
   renderAdmin();
 }
 
-async function editMedia(id, key, urlAtual) {
-  const novo = window.prompt('Novo link para a chave "' + key + '":', urlAtual);
-  if (!novo || !novo.trim()) return;
-
-  const res = await state.db.from('media_assets')
-    .update({ image_url: novo.trim() }).eq('id', id);
-
-  if (res.error) { toast('Erro: ' + res.error.message); return; }
-  toast('Link atualizado.');
-  await loadMediaAssets();
-  renderAdmin();
+function pickFile(nome) {
+  const semExt = nome.replace(/\.[^.]+$/, '');
+  const atual = $('medFile');
+  const chave = $('medKey');
+  if (atual) atual.value = nome;
+  if (chave && !chave.value) chave.value = semExt.toLowerCase();
+  toast('Arquivo "' + nome + '" selecionado.');
+  const campo = $('medKey');
+  if (campo) campo.focus();
 }
 
 function copyKey(key) {
@@ -1959,12 +2075,8 @@ function markNavOnScroll() {
 
   const onScroll = () => {
     $('topbar').classList.toggle('scrolled', window.scrollY > 12);
-
     let atual = map[0];
-    map.forEach((x) => {
-      if (x.el.getBoundingClientRect().top <= 160) atual = x;
-    });
-
+    map.forEach((x) => { if (x.el.getBoundingClientRect().top <= 160) atual = x; });
     if (!atual) return;
     links.forEach((l) => l.classList.remove('on'));
     atual.a.classList.add('on');
@@ -2012,8 +2124,7 @@ function bindUI() {
   $('logoutBtn').addEventListener('click', async () => {
     play('click');
     await state.db.auth.signOut();
-    state.user = null;
-    state.profile = null;
+    state.user = null; state.profile = null;
     paintUser();
     $('adminDrawer').classList.remove('on');
     toast('Você saiu da conta.');
@@ -2042,12 +2153,10 @@ function bindUI() {
   $('signupBtn').addEventListener('click', async () => {
     const email = $('authEmail').value.trim();
     const pass = $('authPass').value;
-
     if (email.length < 5 || pass.length < 6) {
       $('authMsg').textContent = 'Informe e-mail válido e senha com 6 caracteres ou mais.';
       return;
     }
-
     const res = await state.db.auth.signUp({ email, password: pass });
     if (res.error) { $('authMsg').textContent = res.error.message; return; }
     $('authMsg').textContent = 'Conta criada. Confirme o e-mail se a verificação estiver ativa.';
@@ -2076,23 +2185,17 @@ function bindUI() {
     if (alvo.dataset.hero) {
       state.heroIndex = (state.heroIndex + Number(alvo.dataset.hero) + state.hero.length)
         % state.hero.length;
-      play('tab');
-      renderHero();
-      return;
+      play('tab'); renderHero(); return;
     }
 
     if (alvo.dataset.dot) {
       state.heroIndex = Number(alvo.dataset.dot);
-      play('tab');
-      renderHero();
-      return;
+      play('tab'); renderHero(); return;
     }
 
     if (alvo.dataset.tab) {
       state.tab = alvo.dataset.tab;
-      play('tab');
-      renderLive();
-      return;
+      play('tab'); renderLive(); return;
     }
 
     if (alvo.dataset.match) {
@@ -2115,9 +2218,7 @@ function bindUI() {
 
     if (alvo.dataset.admtab) {
       state.adminTab = alvo.dataset.admtab;
-      play('tab');
-      renderAdmin();
-      return;
+      play('tab'); renderAdmin(); return;
     }
   });
 
@@ -2139,36 +2240,41 @@ function bindUI() {
 
     const compToggle = ev.target.closest('[data-comp-toggle]');
     if (compToggle) {
-      toggleCompetition(compToggle.dataset.compToggle, compToggle.dataset.val);
-      return;
+      toggleCompetition(compToggle.dataset.compToggle, compToggle.dataset.val); return;
     }
 
     const compRename = ev.target.closest('[data-comp-rename]');
     if (compRename) {
-      renameCompetition(compRename.dataset.compRename, compRename.dataset.name);
-      return;
+      renameCompetition(compRename.dataset.compRename, compRename.dataset.name); return;
     }
 
     const compKey = ev.target.closest('[data-comp-key]');
     if (compKey) { setCompLogo(compKey.dataset.compKey, compKey.dataset.key); return; }
 
     const teamLogo = ev.target.closest('[data-team-logo]');
-    if (teamLogo) {
-      setTeamLogo(teamLogo.dataset.teamLogo, teamLogo.dataset.key, teamLogo.dataset.url);
-      return;
-    }
+    if (teamLogo) { setTeamLogo(teamLogo.dataset.teamLogo, teamLogo.dataset.key); return; }
+
+    const teamClear = ev.target.closest('[data-team-clear]');
+    if (teamClear) { clearTeamLogo(teamClear.dataset.teamClear); return; }
+
+    const pick = ev.target.closest('[data-pick]');
+    if (pick) { pickFile(pick.dataset.pick); return; }
 
     const copy = ev.target.closest('[data-copy]');
     if (copy) { copyKey(copy.dataset.copy); return; }
 
-    const mediaEdit = ev.target.closest('[data-media-edit]');
-    if (mediaEdit) {
-      editMedia(mediaEdit.dataset.mediaEdit, mediaEdit.dataset.key, mediaEdit.dataset.url);
+    const mediaDel = ev.target.closest('[data-media-del]');
+    if (mediaDel) { deleteMedia(mediaDel.dataset.mediaDel); return; }
+
+    if (ev.target.closest('[data-refresh-bucket]')) {
+      state.bucketFiles = null;
+      renderAdmin();
       return;
     }
 
     if (ev.target.id === 'compCreate') { createCompetition(); return; }
     if (ev.target.id === 'medSave') { saveMedia(); return; }
+    if (ev.target.id === 'teamApply') { applyTeamFromSelect(); return; }
   });
 
   document.addEventListener('keydown', (ev) => {
@@ -2186,9 +2292,9 @@ function bindUI() {
 async function boot() {
   bindUI();
   fillTokens();
-  applyLogo();
 
   if (!CONFIG_OK) {
+    applyLogo();
     $('setupModal').classList.add('on');
     $('heroStage').innerHTML =
       '<div class="hero-empty">Falta injetar as credenciais do banco.</div>';
@@ -2199,6 +2305,7 @@ async function boot() {
 
   await loadSession();
   await loadMediaAssets();
+  await applyLogo();
   await loadPosts();
   await loadCompetitions();
   await loadMatches();
